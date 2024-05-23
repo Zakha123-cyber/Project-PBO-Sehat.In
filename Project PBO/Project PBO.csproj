@@ -24,4 +24,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="App\Context\" />
+    <Folder Include="App\Core\" />
+  </ItemGroup>
+
 </Project>
