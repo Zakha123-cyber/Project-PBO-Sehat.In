@@ -28,7 +28,9 @@ namespace Project_PBO
             umum.Show();
             this.Hide();
             umum.FormClosed += (s, args) => this.Close();
-        }
+        }// Compare this snippet from Project%20PBO/User.cs:
+        // using System;
+        // using System.Collections.Generic;
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             Ibuanak iba = new Ibuanak();
