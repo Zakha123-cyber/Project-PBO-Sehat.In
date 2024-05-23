@@ -25,6 +25,7 @@ namespace Project_PBO
         {
             Color defaultColor = ColorTranslator.FromHtml("#F5F6F8");
             Color activeColor = ColorTranslator.FromHtml("#E13D65");
+            //action button zakha anjinggggg
 
             // Loop melalui semua kontrol di form
             foreach (Control ctrl in this.Controls)
@@ -78,6 +79,11 @@ namespace Project_PBO
             AdmKritik admkritik = new AdmKritik();
             admkritik.Show();
             this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         //private void Admin_Load(object sender, EventArgs e)
