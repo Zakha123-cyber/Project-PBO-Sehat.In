@@ -10,7 +10,7 @@ namespace Project_PBO.App.Context
 {
     public class ProfilContext : dataconn
     {
-        public static DataTable all(string query)
+        public static DataTable all(string query) 
         {
             DataTable dataTable = queryExecutor(query);
             return dataTable;
