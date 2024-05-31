@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Project_PBO.App.Core
 {
-    internal class dataconn
+    public class dataconn
     {
         private static readonly string DB_HOST = "localhost";
-        private static readonly string DB_DATABASE = "sehatin";
+        private static readonly string DB_DATABASE = "SEHATINDB";
         private static readonly string DB_USERNAME = "postgres";
-        private static readonly string DB_PASSWORD = "1802";
+        private static readonly string DB_PASSWORD = "zakhaaditya";
         private static readonly string DB_PORT = "5432";
 
         private static NpgsqlConnection connection;

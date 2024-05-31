@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Project_PBO
 {
-    public partial class Login : Form
+    public partial class Login : Form 
     {
         public Login()
         {
@@ -27,19 +28,29 @@ namespace Project_PBO
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
+            string query = $"SELECT * FROM profil where email = {tbemail} and password = {tbpass}";
+            DataTable dt = ProfilContext.queryExecutor(query);
+            if (dt.Rows.Count > 0)
             {
-                Admin newForm = new Admin();
-                newForm.Show();
-                this.Hide();
-                newForm.FormClosed += (s, args) => this.Close();
+                if (radioButton1.Checked)
+                {
+                    Admin newForm = new Admin();
+                    newForm.Show();
+                    this.Hide();
+                    newForm.FormClosed += (s, args) => this.Close();
+                }
+                if (radioButton2.Checked)
+                {
+                    User newForm = new User();
+                    newForm.Show();
+                    this.Hide();
+                    newForm.FormClosed += (s, args) => this.Close();
+                }
             }
-            if (radioButton2.Checked)
+
+            else
             {
-                User newForm = new User();
-                newForm.Show();
-                this.Hide();
-                newForm.FormClosed += (s, args) => this.Close();
+                MessageBox.Show("Email atau Password anda salah", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
