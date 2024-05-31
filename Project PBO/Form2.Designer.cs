@@ -32,8 +32,6 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
             button1 = new Button();
             label2 = new Label();
             label3 = new Label();
@@ -77,34 +75,6 @@
             label1.Size = new Size(537, 54);
             label1.TabIndex = 2;
             label1.Text = "Selamat Datang di Sehat.In";
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButton1.Location = new Point(683, 265);
-            radioButton1.Margin = new Padding(2, 3, 2, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(111, 36);
-            radioButton1.TabIndex = 3;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Admin";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            radioButton2.Location = new Point(683, 309);
-            radioButton2.Margin = new Padding(2, 3, 2, 3);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(86, 36);
-            radioButton2.TabIndex = 4;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "User";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // button1
             // 
@@ -162,8 +132,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(button1);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -181,8 +149,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
         private Button button1;
         private Label label2;
         private Label label3;
