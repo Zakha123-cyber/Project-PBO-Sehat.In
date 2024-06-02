@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,6 +86,14 @@ namespace Project_PBO
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Mengambil data dari database dari artikelcontext
+            DataTable dt = Artikelcontext.GetAllArtikel();
+            dataGridView1.DataSource = dt;// Menampilkan data ke datagridview
 
         }
     }
