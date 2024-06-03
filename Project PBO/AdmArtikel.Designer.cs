@@ -173,6 +173,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(367, 128);
             textBox3.TabIndex = 43;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label6
             // 
@@ -192,6 +193,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(367, 27);
             textBox2.TabIndex = 41;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // textBox1
             // 
@@ -200,6 +202,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(367, 27);
             textBox1.TabIndex = 40;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
@@ -234,6 +237,7 @@
             button7.TabIndex = 47;
             button7.Text = "Upload";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // AdmArtikel
             // 
@@ -270,6 +274,7 @@
         #endregion
 
         private DataGridView dataGridView1;
+
         private Label label2;
         private PictureBox pictureBox1;
         private Button button6;

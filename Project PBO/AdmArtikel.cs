@@ -1,12 +1,7 @@
 ﻿using Project_PBO.App.Context;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project_PBO
@@ -18,10 +13,37 @@ namespace Project_PBO
             InitializeComponent();
             this.Load += new EventHandler(AdmArtikel_Load);
         }
+
         private void AdmArtikel_Load(object sender, EventArgs e)
         {
+            LoadData();
             SetButtonColors(button2);
         }
+
+        private void LoadData()
+        {
+            try
+            {
+                //menampilkan data dari database ke datagridview
+                DataTable artikel = Artikelcontext.all();
+                if (artikel != null)
+                {
+                    dataGridView1.DataSource = artikel;
+                    dataGridView1.Columns[0].HeaderText = "ID Artikel";
+                    dataGridView1.Columns[1].HeaderText = "Judul Artikel";
+                    dataGridView1.Columns[2].HeaderText = "Sumber Artikel";
+                }
+                else
+                {
+                    MessageBox.Show("No data retrieved from the database.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}");
+            }
+        }
+
         private void SetButtonColors(Button activeButton)
         {
             Color defaultColor = ColorTranslator.FromHtml("#F5F6F8");
@@ -33,21 +55,9 @@ namespace Project_PBO
                 if (ctrl is Button btn)
                 {
                     // Mengatur warna untuk setiap button
-                    if (btn == activeButton)
-                    {
-                        btn.BackColor = activeColor;
-                    }
-                    else
-                    {
-                        btn.BackColor = defaultColor;
-                    }
+                    btn.BackColor = btn == activeButton ? activeColor : defaultColor;
                 }
             }
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,6 +87,7 @@ namespace Project_PBO
             admobat.Show();
             this.Hide();
         }
+
         private void button5_Click(object sender, EventArgs e)
         {
             AdmKritik admkritik = new AdmKritik();
@@ -86,15 +97,55 @@ namespace Project_PBO
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            // Add your event handling code here, if needed
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Mengambil data dari database dari artikelcontext
-            DataTable dt = Artikelcontext.GetAllArtikel();
-            dataGridView1.DataSource = dt;// Menampilkan data ke datagridview
+            // Handle cell content click if needed
+        }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            // Handle text change if needed
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            // Handle text change if needed
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            // Handle text change if needed
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // Validate input fields
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Data tidak boleh kosong");
+                return;
+            }
+
+            try
+            {
+                // Insert into database
+                Artikelcontext.insert(textBox1.Text, textBox2.Text);
+                MessageBox.Show("Data berhasil ditambahkan");
+
+                // Refresh the DataGridView after inserting data
+                LoadData();
+
+                // Clear text boxes after insertion
+                textBox1.Clear();
+                textBox2.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inserting data: {ex.Message}");
+            }
         }
     }
 }
