@@ -145,7 +145,7 @@
             label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(0, 192, 192);
-            label2.Location = new Point(365, 67);
+            label2.Location = new Point(355, 67);
             label2.Name = "label2";
             label2.Size = new Size(149, 54);
             label2.TabIndex = 10;
@@ -157,7 +157,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(476, 67);
+            label3.Location = new Point(510, 67);
             label3.Name = "label3";
             label3.Size = new Size(169, 54);
             label3.TabIndex = 11;
@@ -167,7 +167,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 510);
+            ClientSize = new Size(912, 502);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);

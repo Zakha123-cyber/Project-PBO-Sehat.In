@@ -13,7 +13,7 @@ namespace Project_PBO.App.Context
         private static string table = "artikel";
          public static DataTable all()
         {
-            string query = $"SELECT artikel_id, judul AS Nama, sumber AS Sumber FROM {table}";
+            string query = $"SELECT id_artikel, judul AS Nama, sumber AS Sumber FROM {table}";
             return queryExecutor(query);
         }
 
