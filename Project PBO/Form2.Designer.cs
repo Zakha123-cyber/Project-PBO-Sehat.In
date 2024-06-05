@@ -119,6 +119,7 @@
             // 
             tbpass.Location = new Point(666, 407);
             tbpass.Name = "tbpass";
+            tbpass.PasswordChar = '*';
             tbpass.Size = new Size(285, 27);
             tbpass.TabIndex = 9;
             // 
