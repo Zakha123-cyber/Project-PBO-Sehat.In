@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using Npgsql;
 
 namespace Project_PBO
 {
@@ -66,11 +65,40 @@ namespace Project_PBO
 
         private void button4_Click(object sender, EventArgs e)
         {
-            JenisObat jenis = new JenisObat();
-            jenis.Show();
-            this.Hide();
-            jenis.FormClosed += (s, args) => this.Close();
+            // Mendapatkan data yang dipilih dari ComboBox
+            string selectedData = comboBox1.SelectedItem?.ToString();
+
+            // Memeriksa apakah pengguna telah memilih data sebelum melanjutkan
+            if (!string.IsNullOrEmpty(selectedData))
+            {
+                try
+                {
+                    // Query SQL untuk mencari ID penyakit berdasarkan nama penyakit yang dipilih
+                    string idQuery = $"SELECT id_penyakit FROM penyakit WHERE nama_penyakit = '{selectedData}'";
+
+                    // Eksekusi query untuk mendapatkan ID penyakit
+                    int idPenyakit = Convert.ToInt32(Project_PBO.App.Core.dataconn.queryExecutor(idQuery).Rows[0]["id_penyakit"]);
+
+                    // Kondisi filter untuk JenisObat
+                    string filterCondition = $"o.id_penyakit = {idPenyakit}";
+
+                    // Membuka form JenisObat dengan filter yang dipilih
+                    JenisObat jenis = new JenisObat(filterCondition);
+                    jenis.Show();
+                    this.Hide();
+                    jenis.FormClosed += (s, args) => this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Silakan pilih data terlebih dahulu!", "Peringatan");
+            }
         }
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -93,8 +121,14 @@ namespace Project_PBO
             // Memeriksa apakah pengguna telah memilih data sebelum melanjutkan
             if (!string.IsNullOrEmpty(selectedData))
             {
-                // Menampilkan data yang dipilih
-                MessageBox.Show($"Data yang Anda pilih: {selectedData}", "Data Terpilih");
+                // Kondisi filter untuk JenisObat
+                string filterCondition = $"jo.jenis = '{selectedData}'"; // Contoh kondisi filter
+
+                // Menampilkan form JenisObat dengan filter yang dipilih
+                JenisObat jenisObatForm = new JenisObat(filterCondition);
+                jenisObatForm.Show();
+                this.Hide();
+                jenisObatForm.FormClosed += (s, args) => this.Close();
             }
             else
             {

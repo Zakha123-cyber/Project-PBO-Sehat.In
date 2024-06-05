@@ -12,6 +12,6 @@ namespace Project_PBO.App.Models
         public string NamaObat { get; set; }
         public string Fungsi { get; set; }
         public string Dosis { get; set; }
-        public int IdJenis { get; set; }
-    }
+        public int IdJenis { get; set; }
+    }
 }
