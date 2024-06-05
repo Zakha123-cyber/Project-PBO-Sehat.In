@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Project_PBO.App.Context;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Project_PBO
 {
@@ -19,10 +12,13 @@ namespace Project_PBO
 
         private void button4_Click(object sender, EventArgs e)
         {
-            CariFaskes cari = new CariFaskes();
-            cari.Show();
-            this.Hide();
-            cari.FormClosed += (s, args) => this.Close();
+            string namaKota = textBox1.Text;
+            DataTable hasilPencarian = faskescontext.cariFaskes(namaKota);
+
+
+            // Buat instance CariFaskes dan berikan argumen hasilPencarian
+            CariFaskes cariFaskesForm = new CariFaskes(hasilPencarian);
+            cariFaskesForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,6 +48,11 @@ namespace Project_PBO
         private void Faskes_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

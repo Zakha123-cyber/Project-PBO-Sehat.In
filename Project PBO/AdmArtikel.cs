@@ -29,9 +29,11 @@ namespace Project_PBO
                 if (artikel != null)
                 {
                     dataGridView1.DataSource = artikel;
-                    dataGridView1.Columns[0].HeaderText = "ID Artikel";
-                    dataGridView1.Columns[1].HeaderText = "Judul Artikel";
-                    dataGridView1.Columns[2].HeaderText = "Sumber Artikel";
+                    dataGridView1.Columns[0].HeaderText = "Action";
+                    dataGridView1.Columns[1].HeaderText = "Id Artikel";
+                    dataGridView1.Columns[2].HeaderText = "Judul";
+                    dataGridView1.Columns[3].HeaderText = "Sumber";
+                    dataGridView1.Columns[4].HeaderText = "Penyakit";
                 }
                 else
                 {
@@ -102,10 +104,29 @@ namespace Project_PBO
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Handle cell content click if needed
+            //hapus data
+            if (e.ColumnIndex == 0)
+            {
+                try
+                {
+                    int idArtikel = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+                    DialogResult dialogResult = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Hapus Data", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        Artikelcontext.delete(idArtikel);
+                        MessageBox.Show("Data berhasil dihapus");
+                        LoadData();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting data: {ex.Message}");
+                }
+            }
+
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+    private void textBox1_TextChanged(object sender, EventArgs e)
         {
             // Handle text change if needed
         }

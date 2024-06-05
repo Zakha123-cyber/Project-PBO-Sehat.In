@@ -10,47 +10,63 @@ namespace Project_PBO.App.Context
 {
     public class Artikelcontext : dataconn
     {
-        private static string table = "artikel";
-         public static DataTable all()
+        private static string artikelTable = "artikel";
+        private static string penyakitTable = "penyakit";
+
+        public static DataTable all()
         {
-            string query = $"SELECT id_artikel, judul AS Nama, sumber AS Sumber FROM {table}";
+            string query = $@"
+        SELECT 
+            a.id_artikel, 
+            a.judul AS Nama, 
+            a.sumber AS Sumber, 
+            p.nama_penyakit AS Penyakit 
+        FROM {artikelTable} a
+        JOIN {penyakitTable} p ON a.penyakit_id = p.id_penyakit";
+
             return queryExecutor(query);
         }
 
- 
 
         //insert sumber
-       public static void insert(string judul, string sumber)
+        public static void insert(string judul, string sumber)
         {
-            string query = $"INSERT INTO {table} (judul, sumber) VALUES ('{judul}', '{sumber}')";
+            string query = $"INSERT INTO {artikelTable} (judul, sumber) VALUES ('{judul}', '{sumber}')";
             queryExecutor(query);
         }
+
 
         //update judul
-        public static void update(int id, string judul)
+
+
+
+
+
+        //delete artikel
+
+        public static bool delete(int idArtikel)
         {
-            string query = $"UPDATE {table} SET judul = '{judul}' WHERE artikel_id = {id}";
-            queryExecutor(query);
+            try
+            {
+                string query = $"DELETE FROM {artikelTable} WHERE id_artikel = {idArtikel}";
+                // Execute the delete query here
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting artikel: {ex.Message}");
+                return false;
+            }
         }
-
-        //update sumber
-        public static void update(int id, string judul, string sumber)
-        {
-            string query = $"UPDATE {table} SET judul = '{judul}', sumber = '{sumber}' WHERE artikel_id = {id}";
-            queryExecutor(query);
-        }
-
-        //delete
-        public static void delete(int id)
-        {
-            string query = $"DELETE FROM {table} WHERE artikel_id = {id}";
-            queryExecutor(query);
-        }   
-
-
-
 
     }
+
+
+
+
+
+
 }
+
 
 

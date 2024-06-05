@@ -1,3 +1,5 @@
+using Project_PBO.App.Models;
+
 namespace Project_PBO
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace Project_PBO
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new SehatIn());
+            Application.Run(new Faskes()); 
         }
     }
 }

@@ -46,6 +46,7 @@
             label3 = new Label();
             label1 = new Label();
             button7 = new Button();
+            HapusArtikel = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -53,6 +54,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { HapusArtikel });
             dataGridView1.Location = new Point(288, 55);
             dataGridView1.Margin = new Padding(2, 3, 2, 3);
             dataGridView1.Name = "dataGridView1";
@@ -239,6 +241,15 @@
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
+            // HapusArtikel
+            // 
+            HapusArtikel.HeaderText = "Action";
+            HapusArtikel.MinimumWidth = 6;
+            HapusArtikel.Name = "HapusArtikel";
+            HapusArtikel.Text = "Hapus";
+            HapusArtikel.UseColumnTextForButtonValue = true;
+            HapusArtikel.Width = 125;
+            // 
             // AdmArtikel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -291,5 +302,6 @@
         private Label label3;
         private Label label1;
         private Button button7;
+        private DataGridViewButtonColumn HapusArtikel;
     }
 }
