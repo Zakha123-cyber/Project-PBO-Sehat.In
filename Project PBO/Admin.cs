@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,42 @@ namespace Project_PBO
         }
         private void Admin_Load(object sender, EventArgs e)
         {
+            LoadData();
             SetButtonColors(button1);
         }
+
+        private void LoadData()
+        {
+            try
+            {
+                // Menampilkan data dari database ke DataGridView
+                DataTable profil = dataAnggotaContext.all();
+                if (profil != null && profil.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = profil;
+
+                    // Mengatur header kolom sesuai dengan kebutuhan
+                    dataGridView1.Columns[0].HeaderText = "No"; // Nomor urut
+                    dataGridView1.Columns[1].Visible = false;
+                    dataGridView1.Columns[2].HeaderText = "Nama";
+                    dataGridView1.Columns[3].HeaderText = "Alamat";
+                    dataGridView1.Columns[4].HeaderText = "Nomor Telpon";
+                    dataGridView1.Columns[5].HeaderText = "Kota";
+
+                    // Menyesuaikan kolom agar mengisi lebar DataGridView
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+                else
+                {
+                    MessageBox.Show("No data retrieved from the database.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}");
+            }
+        }
+
         private void SetButtonColors(Button activeButton)
         {
             Color defaultColor = ColorTranslator.FromHtml("#F5F6F8");
@@ -86,9 +121,10 @@ namespace Project_PBO
 
         }
 
-        //private void Admin_Load(object sender, EventArgs e)
-        //{
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
 
-        //}
+        }
+
     }
 }

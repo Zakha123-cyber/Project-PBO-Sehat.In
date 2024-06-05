@@ -46,35 +46,40 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(95, 223);
+            dataGridView1.Location = new Point(109, 297);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(730, 126);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(834, 168);
             dataGridView1.TabIndex = 47;
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaptionText;
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(14, 50);
+            panel1.Location = new Point(16, 67);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(887, 2);
+            panel1.Size = new Size(1014, 3);
             panel1.TabIndex = 45;
             // 
             // panel2
             // 
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(887, 2);
+            panel2.Size = new Size(1014, 3);
             panel2.TabIndex = 23;
             // 
             // button3
             // 
             button3.BackColor = SystemColors.Control;
             button3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(744, 427);
+            button3.Location = new Point(850, 569);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(114, 27);
+            button3.Size = new Size(130, 36);
             button3.TabIndex = 50;
             button3.Text = "Kembali";
             button3.UseVisualStyleBackColor = false;
@@ -83,9 +88,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.SEHAT_IN_LOGO;
-            pictureBox1.Location = new Point(-38, -70);
+            pictureBox1.Location = new Point(-43, -93);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(229, 201);
+            pictureBox1.Size = new Size(262, 268);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 44;
             pictureBox1.TabStop = false;
@@ -94,25 +100,28 @@
             // 
             panel3.BackColor = SystemColors.ActiveCaptionText;
             panel3.Controls.Add(panel4);
-            panel3.Location = new Point(95, 188);
+            panel3.Location = new Point(109, 251);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(731, 2);
+            panel3.Size = new Size(835, 3);
             panel3.TabIndex = 51;
             // 
             // panel4
             // 
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 0);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(731, 2);
+            panel4.Size = new Size(835, 3);
             panel4.TabIndex = 23;
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(815, 12);
+            button2.Location = new Point(931, 16);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(86, 26);
+            button2.Size = new Size(98, 35);
             button2.TabIndex = 67;
             button2.Text = "PROFIL";
             button2.UseVisualStyleBackColor = true;
@@ -122,9 +131,10 @@
             // 
             button1.BackColor = Color.Transparent;
             button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(722, 12);
+            button1.Location = new Point(825, 16);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(86, 26);
+            button1.Size = new Size(98, 35);
             button1.TabIndex = 66;
             button1.Text = "ARTIKEL";
             button1.UseVisualStyleBackColor = false;
@@ -132,9 +142,9 @@
             // 
             // JenisObat
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 510);
+            ClientSize = new Size(1045, 680);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panel3);
@@ -142,8 +152,10 @@
             Controls.Add(panel1);
             Controls.Add(button3);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "JenisObat";
             Text = "JenisObat";
+            Load += JenisObat_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
