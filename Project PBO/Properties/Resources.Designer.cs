@@ -10,8 +10,9 @@
 
 namespace Project_PBO.Properties {
     using System;
-    
-    
+    using System.Drawing;
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -31,7 +32,13 @@ namespace Project_PBO.Properties {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-        
+
+        public static Image Rectangle_1143__1_ { get; internal set; }
+        public static Image KURUS { get; internal set; }
+        public static Image OBESITAS { get; internal set; }
+        public static Image NORMAL { get; internal set; }
+        public static Image Rectangle_1135 { get; internal set; }
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -243,16 +250,6 @@ namespace Project_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KURUS {
-            get {
-                object obj = ResourceManager.GetObject("KURUS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap mail_forward {
             get {
                 object obj = ResourceManager.GetObject("mail-forward", resourceCulture);
@@ -266,46 +263,6 @@ namespace Project_PBO.Properties {
         internal static System.Drawing.Bitmap MENGHITUNG_KALORI {
             get {
                 object obj = ResourceManager.GetObject("MENGHITUNG KALORI", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap NORMAL {
-            get {
-                object obj = ResourceManager.GetObject("NORMAL", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap OBESITAS {
-            get {
-                object obj = ResourceManager.GetObject("OBESITAS", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rectangle_1135 {
-            get {
-                object obj = ResourceManager.GetObject("Rectangle 1135", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Rectangle_1143__1_ {
-            get {
-                object obj = ResourceManager.GetObject("Rectangle 1143 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

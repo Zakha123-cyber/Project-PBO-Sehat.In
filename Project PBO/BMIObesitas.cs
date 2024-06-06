@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,11 +13,17 @@ namespace Project_PBO
 {
     public partial class BMIObesitas : Form
     {
-        public BMIObesitas()
+        private double tinggi;
+        private double berat;
+        private double bmi;
+        public BMIObesitas(double bmi, double tinggi, double berat)
         {
             InitializeComponent();
+            this.tinggi = tinggi;
+            this.berat = berat;
+            this.bmi = bmi;
+            label7.Text = "Total BMI Anda: " + bmi.ToString("0.00");
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             BMI bmi = new BMI();

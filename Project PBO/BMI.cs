@@ -60,10 +60,28 @@ namespace Project_PBO
                 double weight = double.Parse(textBox2.Text);
                 double bmi = weight / (height * height);
 
-                BMINormal resultForm = new BMINormal(bmi, height, weight);
-                resultForm.Show();
-                this.Hide();
-                resultForm.FormClosed += (s, args) => this.Close();
+                if (bmi < 18.5)
+                {
+                    BMIKurus kurusbmi = new BMIKurus(bmi, height, weight);
+                    kurusbmi.Show();
+                    this.Hide();
+                    kurusbmi.FormClosed += (s, args) => this.Close();
+                }
+
+                else if (bmi < 24.9)
+                {
+                    BMINormal normalbmi = new BMINormal(bmi, height, weight);
+                    normalbmi.Show();
+                    this.Hide();
+                    normalbmi.FormClosed += (s, args) => this.Close();
+                }
+                else
+                {
+                    BMIObesitas obesbmi = new BMIObesitas(bmi, height, weight);
+                    obesbmi.Show();
+                    this.Hide();
+                    obesbmi.FormClosed += (s, args) => this.Close();
+                }
             }
             catch (Exception ex)
             {

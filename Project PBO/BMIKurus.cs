@@ -12,9 +12,16 @@ namespace Project_PBO
 {
     public partial class BMIKurus : Form
     {
-        public BMIKurus()
+        private double tinggi;
+        private double berat;
+        private double bmi;
+        public BMIKurus(double bmi, double tinggi, double berat)
         {
             InitializeComponent();
+            this.tinggi = tinggi;
+            this.berat = berat;
+            this.bmi = bmi;
+            label8.Text = "Total BMI Anda: " + bmi.ToString("0.00");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,6 +54,11 @@ namespace Project_PBO
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

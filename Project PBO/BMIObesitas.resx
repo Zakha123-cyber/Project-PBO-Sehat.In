@@ -117,4 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Berat badan ideal adalah impian semua 
+orang.
+Tidak hanya memiliki
+bentuk tubuh yang menunjang penampilan,
+berat badan ideal juga menandakan
+kondisi tubuh yang sehat.
+Bagaimana denganmu?
+Yuk, hitung sekarang di BMI Kalkulator.</value>
+  </data>
 </root>
