@@ -23,7 +23,7 @@ namespace Project_PBO.App.Context
         website AS Website, 
         jam_operasional AS ""Jam Operasional"" -- Menggunakan tanda kutip ganda untuk delimeter
     FROM faskes
-    WHERE kota = '{namaKota}'";
+    WHERE kota ilike '{namaKota}'";
             return queryExecutor(query);
         }
 
