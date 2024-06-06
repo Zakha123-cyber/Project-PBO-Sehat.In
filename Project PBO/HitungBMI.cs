@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,58 @@ namespace Project_PBO
 {
     public partial class HitungBMI : Form
     {
-        public HitungBMI()
+        private double tinggi;
+        private double berat;
+        private double bmi;
+        public HitungBMI(double bmi, double tinggi, double berat)
         {
             InitializeComponent();
+            this.tinggi = tinggi;
+            this.berat = berat;
+            this.bmi = bmi;
+            DisplayBMI(bmi, tinggi, berat);
         }
+
+        private void DisplayBMI(double bmi, double tinggi, double berat)
+        {
+            UserControl usercontrol = null;
+            if (bmi < 18.5)
+            {
+                usercontrol = new underweight(tinggi, berat, bmi);
+            }
+            else if (bmi < 24.9)
+            {
+                /*usercontrol = new NormalWeightControl(tinggi, berat, bmi);*/
+            }
+            else if (bmi < 29.9)
+            {
+                /*usercontrol = new OverweightControl(tinggi, berat, bmi);*/
+            }
+            else
+            {
+                /*usercontrol = new ObesityControl(tinggi, berat, bmi);*/
+            }
+
+            if (usercontrol != null)
+            {
+                usercontrol.Dock = DockStyle.Fill;
+                this.Controls.Add(usercontrol);
+                usercontrol.BringToFront();
+            }
+        }
+
+
+ /*        private string GetBMICategory(double bmi)
+        {
+            if (bmi < 18.5)
+                return "Underweight (Kurus)";
+            else if (bmi < 24.9)
+                return "Normal weight (Normal)";
+            else if (bmi < 29.9)
+                return "Overweight (Berat Badan Berlebih)";
+            else
+                return "Obesity (Obesitas)";
+        }*/
 
         private void button1_Click(object sender, EventArgs e)
         {

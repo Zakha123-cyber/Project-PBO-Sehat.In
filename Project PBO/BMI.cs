@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Project_PBO
 {
@@ -53,10 +54,24 @@ namespace Project_PBO
 
         private void button4_Click(object sender, EventArgs e)
         {
-            HitungBMI hitbmi = new HitungBMI();
-            hitbmi.Show();
-            this.Hide();
-            hitbmi.FormClosed += (s, args) => this.Close();
+            try
+            {
+                double height = double.Parse(textBox1.Text) / 100; // Konversi tinggi ke meter
+                double weight = double.Parse(textBox2.Text);
+                double bmi = weight / (height * height);
+
+                HitungBMI resultForm = new HitungBMI(bmi, height, weight);
+                resultForm.Show();
+                this.Hide();
+                resultForm.FormClosed += (s, args) => this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Input tidak valid: " + ex.Message);
+            }
+           /* Hi*//*tungBMI hitbmi = new HitungBMI();
+            hitbmi.Show();*/
+      
         }
     }
 }
