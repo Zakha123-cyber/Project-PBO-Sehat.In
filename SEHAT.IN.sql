@@ -74,6 +74,17 @@ constraint fk_jenis_profil
 	on delete cascade
 );
 
+create table keluhan (
+	id_keluhan SERIAL primary key,
+	detail_kritik varchar(255) NOT NULL,
+	detail_saran varchar (255) NOT NULL,
+	id_pelanggan SERIAL NOT NULL,
+constraint fk_profil
+	foreign key (id_pelanggan)
+	references profil (id_profil)
+	on delete cascade
+);
+
 select * from kalori_makanan
 
 insert into faskes(nama_faskes, alamat, kota, no_telfon, website, jam_operasional)
@@ -227,3 +238,7 @@ values ('Posyandu Sebagai Pilar Utama Penyediaan Kesehatan Ibu Dan Anak Di Masya
 ALTER TABLE artikel ALTER COLUMN id_artikel TYPE varchar (8);
 		
 select * from obat
+
+insert into keluhan (detail_kritik, detail_saran, id_pelanggan)
+values (1, 'Jumlah faskes yang ditampilkan masih terbatas.', 'Diharapkan jumlah faskes dan jangkauan kota bisa diperluas.', 13)
+	('Kurangnya daftar kandungan makanan di fitur perhitungan kalori.', 'Tambahkan daftar dan kandungan makanan yang lebih bervariasi.', 8)
