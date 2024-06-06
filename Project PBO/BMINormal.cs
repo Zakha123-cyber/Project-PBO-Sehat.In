@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Project_PBO
 {
-    public partial class HitungBMI : Form
+    public partial class BMINormal : Form
     {
         private double tinggi;
         private double berat;
         private double bmi;
-        public HitungBMI(double bmi, double tinggi, double berat)
+        public BMINormal(double bmi, double tinggi, double berat)
         {
             InitializeComponent();
             this.tinggi = tinggi;
@@ -54,17 +54,17 @@ namespace Project_PBO
         }
 
 
- /*        private string GetBMICategory(double bmi)
-        {
-            if (bmi < 18.5)
-                return "Underweight (Kurus)";
-            else if (bmi < 24.9)
-                return "Normal weight (Normal)";
-            else if (bmi < 29.9)
-                return "Overweight (Berat Badan Berlebih)";
-            else
-                return "Obesity (Obesitas)";
-        }*/
+        /*        private string GetBMICategory(double bmi)
+               {
+                   if (bmi < 18.5)
+                       return "Underweight (Kurus)";
+                   else if (bmi < 24.9)
+                       return "Normal weight (Normal)";
+                   else if (bmi < 29.9)
+                       return "Overweight (Berat Badan Berlebih)";
+                   else
+                       return "Obesity (Obesitas)";
+               }*/
 
         private void button1_Click(object sender, EventArgs e)
         {

@@ -60,7 +60,7 @@ namespace Project_PBO
                 double weight = double.Parse(textBox2.Text);
                 double bmi = weight / (height * height);
 
-                HitungBMI resultForm = new HitungBMI(bmi, height, weight);
+                BMINormal resultForm = new BMINormal(bmi, height, weight);
                 resultForm.Show();
                 this.Hide();
                 resultForm.FormClosed += (s, args) => this.Close();

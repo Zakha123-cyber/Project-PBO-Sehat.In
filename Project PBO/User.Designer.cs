@@ -133,9 +133,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
-            label1.Location = new Point(297, 67);
+            label1.Location = new Point(316, 67);
             label1.Name = "label1";
-            label1.Size = new Size(95, 54);
+            label1.Size = new Size(78, 45);
             label1.TabIndex = 9;
             label1.Text = "HAI";
             // 
@@ -145,9 +145,9 @@
             label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(0, 192, 192);
-            label2.Location = new Point(355, 67);
+            label2.Location = new Point(381, 67);
             label2.Name = "label2";
-            label2.Size = new Size(149, 54);
+            label2.Size = new Size(123, 45);
             label2.TabIndex = 10;
             label2.Text = "SOBAT";
             // 
@@ -157,17 +157,17 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(510, 67);
+            label3.Location = new Point(492, 67);
             label3.Name = "label3";
-            label3.Size = new Size(169, 54);
+            label3.Size = new Size(139, 45);
             label3.TabIndex = 11;
             label3.Text = "SEHAT !";
             // 
             // User
             // 
-            AutoScaleDimensions = new SizeF(10F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(912, 502);
+            ClientSize = new Size(914, 510);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
