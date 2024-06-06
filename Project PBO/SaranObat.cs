@@ -80,7 +80,7 @@ namespace Project_PBO
                     int idPenyakit = Convert.ToInt32(Project_PBO.App.Core.dataconn.queryExecutor(idQuery).Rows[0]["id_penyakit"]);
 
                     // Kondisi filter untuk JenisObat
-                    string filterCondition = $"o.id_penyakit = {idPenyakit}";
+                    string filterCondition = $"o.penyakit_id = {idPenyakit}";
 
                     // Membuka form JenisObat dengan filter yang dipilih
                     JenisObat jenis = new JenisObat(filterCondition);

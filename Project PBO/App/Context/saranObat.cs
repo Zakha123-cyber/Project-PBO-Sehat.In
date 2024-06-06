@@ -13,7 +13,7 @@ namespace Project_PBO.App.Context
             string query = $@"
                 SELECT o.nama_obat AS NamaObat, o.fungsi AS Fungsi, o.dosis AS Dosis, jo.jenis AS NamaJenisObat
                 FROM obat o
-                JOIN jenis_obat jo ON o.id_jenis = jo.id_jenis
+                JOIN jenis_obat jo ON o.jenis_id = jo.id_jenis
                 {(!string.IsNullOrEmpty(filterCondition) ? "WHERE " + filterCondition : "")}";
 
             // Mengeksekusi query dan mengembalikan hasilnya
