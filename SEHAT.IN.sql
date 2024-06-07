@@ -85,6 +85,10 @@ constraint fk_profil
 	on delete cascade
 );
 
+-- RENAME COLUMN NAME --
+ALTER TABLE table_name
+RENAME COLUMN column_name to new_column_name;
+
 select * from kalori_makanan
 
 insert into faskes(nama_faskes, alamat, kota, no_telfon, website, jam_operasional)
