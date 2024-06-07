@@ -20,6 +20,9 @@ namespace Project_PBO
 
     public partial class Login : Form
     {
+
+        public static string UserEmail { get; private set; }
+
         public Login()
         {
             InitializeComponent();
@@ -31,13 +34,16 @@ namespace Project_PBO
             string password = tbpass.Text.Trim();
 
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+
             {
+               
                 MessageBox.Show("Please enter your email and password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
             {
                 // Menyiapkan query dengan parameter
+                UserEmail = email;
                 string query = "SELECT * FROM profil WHERE email = @email AND password = @password";
                 NpgsqlParameter[] parameters = {
                 new NpgsqlParameter("@email", email),
@@ -96,6 +102,16 @@ namespace Project_PBO
             regis.Show();
             this.Hide();
             regis.FormClosed += (s, args) => this.Close();
+        }
+
+        private void tbemail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

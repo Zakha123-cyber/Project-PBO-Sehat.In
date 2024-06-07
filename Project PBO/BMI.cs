@@ -87,9 +87,14 @@ namespace Project_PBO
             {
                 MessageBox.Show("Input tidak valid: " + ex.Message);
             }
-           /* Hi*//*tungBMI hitbmi = new HitungBMI();
-            hitbmi.Show();*/
-      
+            /* Hi*//*tungBMI hitbmi = new HitungBMI();
+             hitbmi.Show();*/
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
