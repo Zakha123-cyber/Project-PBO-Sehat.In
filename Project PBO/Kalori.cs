@@ -24,7 +24,6 @@ namespace Project_PBO
         }
         public List<TambahKaloriResponse> arrayMakanan;
 
-        // Constructor untuk menginisialisasi properti
         public Kalori()
         {
             InitializeComponent();
@@ -77,10 +76,8 @@ namespace Project_PBO
             int beratMakanan = Int32.Parse(textBox2.Text);
             double kalori = KaloriContext.countKalori(namaMakanan, beratMakanan);
 
-            // Validasi input berat
             if (Int32.TryParse(textBox2.Text, out beratMakanan))
             {
-                // Membuat objek TambahKaloriResponse baru
                 TambahKaloriResponse tambahKaloriResponse = new TambahKaloriResponse
                 {
                     nama_makanan = namaMakanan,
@@ -88,16 +85,13 @@ namespace Project_PBO
                     kandungan = (int)kalori
                 };
 
-                // Menambahkan objek ke arrayMakanan
                 arrayMakanan.Add(tambahKaloriResponse);
 
-                // Memperbarui DataSource
                 ArrayMakanan.DataSource = null;
                 ArrayMakanan.DataSource = arrayMakanan;
             }
             else
             {
-                // Menampilkan pesan error jika input tidak valid
                 MessageBox.Show("Masukkan berat makanan yang valid.");
             }
 

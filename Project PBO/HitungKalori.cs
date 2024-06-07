@@ -14,7 +14,7 @@ namespace Project_PBO
     public partial class HitungKalori : Form
     {
         private double hasilKalori;
-        public List<Kalori.TambahKaloriResponse> arrayMakanan;
+        private List<Kalori.TambahKaloriResponse> arrayMakanan;
         private DataGridView dataGridView;
 
 
@@ -52,10 +52,6 @@ namespace Project_PBO
         
             }
         }
-            /*  public HitungKalori(double hasilKalori)
-              {
-                  this.hasilKalori = hasilKalori;
-              }*/
 
         private void button1_Click(object sender, EventArgs e)
         {
