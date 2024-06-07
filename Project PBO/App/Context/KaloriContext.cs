@@ -18,7 +18,7 @@ namespace Project_PBO.App.Context
             return dt;
         }
 
-        public static int countKalori(string name, int berat)
+        public static int getKandungan(string name)
         {
             string query = "SELECT * from kalori_makanan WHERE nama_makanan = @nama_makanan";
             NpgsqlParameter[] param =
@@ -28,7 +28,21 @@ namespace Project_PBO.App.Context
             DataTable dt = queryExecutor(query, param);
             string kandunganMakanan = dt.Rows[0]["kandungan"].ToString();
             int kandunganMakananInteger = Int32.Parse(kandunganMakanan);
-            int totalKalori = (berat / 100) * kandunganMakananInteger;
+            return kandunganMakananInteger;
+        }
+
+        public static double countKalori(string name, double berat)
+        {
+            string query = "SELECT * from kalori_makanan WHERE nama_makanan = @nama_makanan";
+            NpgsqlParameter[] param =
+            {
+                new NpgsqlParameter("@nama_makanan", DbType.String){Value = name},
+            };
+            DataTable dt = queryExecutor(query, param);
+            string kandunganMakanan = dt.Rows[0]["kandungan"].ToString();
+            double kandunganMakananInteger = Double.Parse(kandunganMakanan);
+            double beratfix = berat / 100;
+            double totalKalori = beratfix * kandunganMakananInteger;
             return totalKalori;
         }
     }

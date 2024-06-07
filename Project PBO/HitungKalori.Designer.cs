@@ -45,6 +45,7 @@
             label5 = new Label();
             label3 = new Label();
             hasil = new Label();
+            lblTotalKalori = new Label();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -218,11 +219,23 @@
             hasil.TabIndex = 82;
             hasil.Text = "Hasil";
             // 
+            // lblTotalKalori
+            // 
+            lblTotalKalori.AutoSize = true;
+            lblTotalKalori.Font = new Font("Arial Black", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTotalKalori.ForeColor = Color.Red;
+            lblTotalKalori.Location = new Point(433, 502);
+            lblTotalKalori.Name = "lblTotalKalori";
+            lblTotalKalori.Size = new Size(78, 28);
+            lblTotalKalori.TabIndex = 83;
+            lblTotalKalori.Text = "label1";
+            // 
             // HitungKalori
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 680);
+            Controls.Add(lblTotalKalori);
             Controls.Add(hasil);
             Controls.Add(label5);
             Controls.Add(label3);
@@ -266,5 +279,6 @@
         private Label label5;
         private Label label3;
         private Label hasil;
+        private Label lblTotalKalori;
     }
 }

@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +16,15 @@ namespace Project_PBO
 {
     public partial class Kalori : Form
     {
+        public class TambahKaloriResponse
+        {
+            public string nama_makanan { get; set; }
+            public int berat { get; set; }
+            public int kandungan { get; set; }
+        }
+        public List<TambahKaloriResponse> arrayMakanan;
+
+        // Constructor untuk menginisialisasi properti
         public Kalori()
         {
             InitializeComponent();
@@ -22,6 +32,7 @@ namespace Project_PBO
             ListMakanan.DataSource = makanan;
             ListMakanan.DisplayMember = "nama_makanan";
             ListMakanan.ValueMember = "nama_makanan";
+            arrayMakanan = new List<TambahKaloriResponse>();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,10 +61,11 @@ namespace Project_PBO
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string namaMakanan = ListMakanan.Text;
+        /*    string namaMakanan = ListMakanan.Text;
             int beratMakanan = Int32.Parse(textBox2.Text);
-            int hasilKalori = KaloriContext.countKalori(namaMakanan, beratMakanan);
-            HitungKalori hitung = new HitungKalori(hasilKalori);
+            int hasilKalori = (int)KaloriContext.countKalori(namaMakanan, beratMakanan);*/
+            HitungKalori hitung = new HitungKalori();
+            hitung.SetData(arrayMakanan);
             hitung.Show();
             this.Hide();
             hitung.FormClosed += (s, args) => this.Close();
@@ -61,19 +73,37 @@ namespace Project_PBO
 
         private void TambahButton_Click(object sender, EventArgs e)
         {
-            List<TambahKaloriResponse> arrayMakanan = new List<TambahKaloriResponse>();
             string namaMakanan = ListMakanan.Text;
             int beratMakanan = Int32.Parse(textBox2.Text);
-            TambahKaloriResponse tambahKaloriResponse = new TambahKaloriResponse();
-            tambahKaloriResponse.nama_makanan = namaMakanan;
-            tambahKaloriResponse.berat = beratMakanan;
-            tambahKaloriResponse.kandungan = 100;
+            double kalori = KaloriContext.countKalori(namaMakanan, beratMakanan);
 
-            arrayMakanan.Add(tambahKaloriResponse);
-            
-            ArrayMakanan.DataSource = arrayMakanan;
+            // Validasi input berat
+            if (Int32.TryParse(textBox2.Text, out beratMakanan))
+            {
+                // Membuat objek TambahKaloriResponse baru
+                TambahKaloriResponse tambahKaloriResponse = new TambahKaloriResponse
+                {
+                    nama_makanan = namaMakanan,
+                    berat = beratMakanan,
+                    kandungan = (int)kalori
+                };
 
+                // Menambahkan objek ke arrayMakanan
+                arrayMakanan.Add(tambahKaloriResponse);
+
+                // Memperbarui DataSource
+                ArrayMakanan.DataSource = null;
+                ArrayMakanan.DataSource = arrayMakanan;
+            }
+            else
+            {
+                // Menampilkan pesan error jika input tidak valid
+                MessageBox.Show("Masukkan berat makanan yang valid.");
+            }
+
+            // Membersihkan input
             textBox2.Text = "";
+            ListMakanan.Text = "";
         }
     }
 }

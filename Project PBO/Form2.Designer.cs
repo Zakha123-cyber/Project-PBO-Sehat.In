@@ -1,4 +1,5 @@
-﻿namespace Project_PBO
+﻿
+namespace Project_PBO
 {
     partial class Login
     {
@@ -164,6 +165,16 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void tbemail_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

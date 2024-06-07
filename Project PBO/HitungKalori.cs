@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App.dtos.responses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,49 @@ namespace Project_PBO
 {
     public partial class HitungKalori : Form
     {
-        public HitungKalori(int total)
+        private double hasilKalori;
+        public List<Kalori.TambahKaloriResponse> arrayMakanan;
+        private DataGridView dataGridView;
+
+
+        public HitungKalori()
         {
             InitializeComponent();
-            hasil.Text = total.ToString();
         }
+
+        public void SetData(List<Kalori.TambahKaloriResponse> makananList)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = makananList;
+
+            if (dataGridView1.Columns.Count > 0)
+            {
+                dataGridView1.Columns[0].HeaderText = "Nama Makanan";
+                dataGridView1.Columns[1].HeaderText = "Berat";
+                dataGridView1.Columns[2].HeaderText = "Kandungan Kalori";
+            }
+
+            UpdateTotalKalori(makananList);
+            
+        }
+
+        private void UpdateTotalKalori(List<Kalori.TambahKaloriResponse> makananList)
+        {
+            if (makananList != null)
+            {
+                double totalKalori = 0;
+                foreach (var makanan in makananList)
+                {
+                    totalKalori += makanan.kandungan;
+                }
+                lblTotalKalori.Text = "Total Kalori Anda : " + totalKalori.ToString();
+        
+            }
+        }
+            /*  public HitungKalori(double hasilKalori)
+              {
+                  this.hasilKalori = hasilKalori;
+              }*/
 
         private void button1_Click(object sender, EventArgs e)
         {
