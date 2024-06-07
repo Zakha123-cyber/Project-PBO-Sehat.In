@@ -1,4 +1,7 @@
-﻿using Project_PBO.App.Core;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Npgsql;
+using NpgsqlTypes;
+using Project_PBO.App.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -44,19 +47,14 @@ namespace Project_PBO.App.Context
 
         //delete artikel
 
-        public static bool delete(int idArtikel)
+        public static void delete(string id)
         {
-            try
+            string query = $"DELETE FROM {artikelTable} WHERE id_artikel = @id";
+            NpgsqlParameter[] parameters =
             {
-                string query = $"DELETE FROM {artikelTable} WHERE id_artikel = {idArtikel}";
-                // Execute the delete query here
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error deleting artikel: {ex.Message}");
-                return false;
-            }
+                new NpgsqlParameter("@id", NpgsqlDbType.Varchar){Value = id},
+            };
+            commandExecutor(query, parameters);
         }
 
     }

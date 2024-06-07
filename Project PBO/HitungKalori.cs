@@ -12,9 +12,10 @@ namespace Project_PBO
 {
     public partial class HitungKalori : Form
     {
-        public HitungKalori()
+        public HitungKalori(int total)
         {
             InitializeComponent();
+            hasil.Text = total.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmArtikel));
             dataGridView1 = new DataGridView();
+            HapusArtikel = new DataGridViewButtonColumn();
             label2 = new Label();
             pictureBox1 = new PictureBox();
             button6 = new Button();
@@ -46,7 +47,6 @@
             label3 = new Label();
             label1 = new Label();
             button7 = new Button();
-            HapusArtikel = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -62,6 +62,15 @@
             dataGridView1.Size = new Size(743, 167);
             dataGridView1.TabIndex = 20;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // HapusArtikel
+            // 
+            HapusArtikel.HeaderText = "Action";
+            HapusArtikel.MinimumWidth = 6;
+            HapusArtikel.Name = "HapusArtikel";
+            HapusArtikel.Text = "Hapus";
+            HapusArtikel.UseColumnTextForButtonValue = true;
+            HapusArtikel.Width = 125;
             // 
             // label2
             // 
@@ -240,15 +249,6 @@
             button7.Text = "Upload";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
-            // 
-            // HapusArtikel
-            // 
-            HapusArtikel.HeaderText = "Action";
-            HapusArtikel.MinimumWidth = 6;
-            HapusArtikel.Name = "HapusArtikel";
-            HapusArtikel.Text = "Hapus";
-            HapusArtikel.UseColumnTextForButtonValue = true;
-            HapusArtikel.Width = 125;
             // 
             // AdmArtikel
             // 

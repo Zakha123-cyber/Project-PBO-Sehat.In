@@ -30,7 +30,7 @@ namespace Project_PBO
                 {
                     dataGridView1.DataSource = artikel;
                     dataGridView1.Columns[0].HeaderText = "Action";
-                    dataGridView1.Columns[1].HeaderText = "Id Artikel";
+                    dataGridView1.Columns[1].HeaderText = "id_artikel";
                     dataGridView1.Columns[2].HeaderText = "Judul";
                     dataGridView1.Columns[3].HeaderText = "Sumber";
                     dataGridView1.Columns[4].HeaderText = "Penyakit";
@@ -109,7 +109,8 @@ namespace Project_PBO
             {
                 try
                 {
-                    int idArtikel = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+                    string idArtikel = dataGridView1.Rows[e.RowIndex].Cells["id_artikel"].Value.ToString();
+
                     DialogResult dialogResult = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Hapus Data", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
