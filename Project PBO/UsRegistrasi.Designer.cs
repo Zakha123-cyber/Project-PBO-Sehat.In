@@ -28,35 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tbemail = new TextBox();
+            nama = new TextBox();
             label2 = new Label();
             button1 = new Button();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox3 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            email = new TextBox();
+            password = new TextBox();
             label3 = new Label();
             label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            negara = new TextBox();
+            kota = new TextBox();
+            alamat = new TextBox();
+            label7 = new Label();
+            label8 = new Label();
+            nohp = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
-            // tbemail
+            // nama
             // 
-            tbemail.Location = new Point(550, 189);
-            tbemail.Margin = new Padding(3, 2, 3, 2);
-            tbemail.Multiline = true;
-            tbemail.Name = "tbemail";
-            tbemail.Size = new Size(262, 33);
-            tbemail.TabIndex = 19;
+            nama.Location = new Point(452, 199);
+            nama.Margin = new Padding(3, 2, 3, 2);
+            nama.Name = "nama";
+            nama.Size = new Size(190, 23);
+            nama.TabIndex = 19;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.DodgerBlue;
-            label2.Location = new Point(550, 170);
+            label2.Location = new Point(452, 180);
             label2.Name = "label2";
             label2.Size = new Size(100, 17);
             label2.TabIndex = 18;
@@ -67,7 +74,7 @@
             button1.BackColor = Color.DodgerBlue;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(708, 415);
+            button1.Location = new Point(736, 399);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(104, 35);
@@ -110,30 +117,28 @@
             pictureBox3.TabIndex = 21;
             pictureBox3.TabStop = false;
             // 
-            // textBox1
+            // email
             // 
-            textBox1.Location = new Point(550, 255);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(262, 33);
-            textBox1.TabIndex = 22;
+            email.Location = new Point(452, 265);
+            email.Margin = new Padding(3, 2, 3, 2);
+            email.Name = "email";
+            email.Size = new Size(190, 23);
+            email.TabIndex = 22;
             // 
-            // textBox2
+            // password
             // 
-            textBox2.Location = new Point(550, 320);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(262, 33);
-            textBox2.TabIndex = 23;
+            password.Location = new Point(452, 330);
+            password.Margin = new Padding(3, 2, 3, 2);
+            password.Name = "password";
+            password.Size = new Size(190, 23);
+            password.TabIndex = 23;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DodgerBlue;
-            label3.Location = new Point(550, 301);
+            label3.Location = new Point(452, 311);
             label3.Name = "label3";
             label3.Size = new Size(66, 17);
             label3.TabIndex = 24;
@@ -144,22 +149,106 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.DodgerBlue;
-            label4.Location = new Point(550, 236);
+            label4.Location = new Point(452, 246);
             label4.Name = "label4";
             label4.Size = new Size(42, 17);
             label4.TabIndex = 25;
             label4.Text = "Email";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.DodgerBlue;
+            label5.Location = new Point(689, 246);
+            label5.Name = "label5";
+            label5.Size = new Size(36, 17);
+            label5.TabIndex = 31;
+            label5.Text = "Kota";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.DodgerBlue;
+            label6.Location = new Point(689, 311);
+            label6.Name = "label6";
+            label6.Size = new Size(52, 17);
+            label6.TabIndex = 30;
+            label6.Text = "Negara";
+            // 
+            // negara
+            // 
+            negara.Location = new Point(689, 330);
+            negara.Margin = new Padding(3, 2, 3, 2);
+            negara.Name = "negara";
+            negara.Size = new Size(190, 23);
+            negara.TabIndex = 29;
+            // 
+            // kota
+            // 
+            kota.Location = new Point(689, 265);
+            kota.Margin = new Padding(3, 2, 3, 2);
+            kota.Name = "kota";
+            kota.Size = new Size(190, 23);
+            kota.TabIndex = 28;
+            // 
+            // alamat
+            // 
+            alamat.Location = new Point(689, 199);
+            alamat.Margin = new Padding(3, 2, 3, 2);
+            alamat.Name = "alamat";
+            alamat.Size = new Size(190, 23);
+            alamat.TabIndex = 27;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.DodgerBlue;
+            label7.Location = new Point(689, 180);
+            label7.Name = "label7";
+            label7.Size = new Size(52, 17);
+            label7.TabIndex = 26;
+            label7.Text = "Alamat";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.DodgerBlue;
+            label8.Location = new Point(452, 380);
+            label8.Name = "label8";
+            label8.Size = new Size(52, 17);
+            label8.TabIndex = 33;
+            label8.Text = "No. HP";
+            // 
+            // nohp
+            // 
+            nohp.Location = new Point(452, 399);
+            nohp.Margin = new Padding(3, 2, 3, 2);
+            nohp.Name = "nohp";
+            nohp.Size = new Size(190, 23);
+            nohp.TabIndex = 32;
             // 
             // UsRegistrasi
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 510);
+            Controls.Add(label8);
+            Controls.Add(nohp);
+            Controls.Add(label5);
+            Controls.Add(label6);
+            Controls.Add(negara);
+            Controls.Add(kota);
+            Controls.Add(alamat);
+            Controls.Add(label7);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(tbemail);
+            Controls.Add(password);
+            Controls.Add(email);
+            Controls.Add(nama);
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -174,15 +263,23 @@
         }
 
         #endregion
-        private TextBox tbemail;
+        private TextBox nama;
         private Label label2;
         private Button button1;
         private Label label1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox email;
+        private TextBox password;
         private Label label3;
         private Label label4;
+        private Label label5;
+        private Label label6;
+        private TextBox negara;
+        private TextBox kota;
+        private TextBox alamat;
+        private Label label7;
+        private Label label8;
+        private TextBox nohp;
     }
 }

@@ -36,7 +36,7 @@ namespace Project_PBO
             }
 
             UpdateTotalKalori(makananList);
-            
+
         }
 
         private void UpdateTotalKalori(List<Kalori.TambahKaloriResponse> makananList)
@@ -49,7 +49,7 @@ namespace Project_PBO
                     totalKalori += makanan.kandungan;
                 }
                 lblTotalKalori.Text = "Total Kalori Anda : " + totalKalori.ToString();
-        
+
             }
         }
 

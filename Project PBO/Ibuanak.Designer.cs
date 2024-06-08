@@ -66,6 +66,7 @@
             // pictureBox5
             // 
             pictureBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox5.Cursor = Cursors.Hand;
             pictureBox5.Image = Properties.Resources.Kalender_Kehamilan;
             pictureBox5.Location = new Point(392, 158);
             pictureBox5.Name = "pictureBox5";

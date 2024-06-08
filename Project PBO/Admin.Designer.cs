@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -36,12 +35,13 @@
             button5 = new Button();
             button6 = new Button();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             label2 = new Label();
             dataGridView1 = new DataGridView();
+            namaadmin = new Label();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -111,23 +111,13 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.Group_237472;
             pictureBox1.Location = new Point(12, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(209, 166);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(252, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(650, 166);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 7;
-            pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -155,14 +145,35 @@
             dataGridView1.TabIndex = 10;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // namaadmin
+            // 
+            namaadmin.AutoSize = true;
+            namaadmin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            namaadmin.Location = new Point(64, 136);
+            namaadmin.Name = "namaadmin";
+            namaadmin.Size = new Size(106, 21);
+            namaadmin.TabIndex = 11;
+            namaadmin.Text = "nama admin";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.Group_237473__1_;
+            pictureBox2.Location = new Point(252, -16);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(650, 192);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 12;
+            pictureBox2.TabStop = false;
+            // 
             // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 510);
+            Controls.Add(pictureBox2);
+            Controls.Add(namaadmin);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
-            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(button6);
             Controls.Add(button5);
@@ -174,8 +185,8 @@
             Text = "Admin";
             Load += Admin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -189,8 +200,9 @@
         private Button button5;
         private Button button6;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private Label label2;
         private DataGridView dataGridView1;
+        private Label namaadmin;
+        private PictureBox pictureBox2;
     }
 }

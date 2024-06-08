@@ -98,6 +98,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Image = Properties.Resources.Umum;
             pictureBox3.Location = new Point(55, 133);
             pictureBox3.Name = "pictureBox3";
@@ -109,6 +110,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Cursor = Cursors.Hand;
             pictureBox4.Image = Properties.Resources.Ibu___Anak;
             pictureBox4.Location = new Point(329, 144);
             pictureBox4.Name = "pictureBox4";
@@ -120,6 +122,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.Cursor = Cursors.Hand;
             pictureBox5.Image = Properties.Resources.Farmasi;
             pictureBox5.Location = new Point(585, 144);
             pictureBox5.Name = "pictureBox5";

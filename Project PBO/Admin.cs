@@ -126,5 +126,9 @@ namespace Project_PBO
 
         }
 
+        private void namaadmin2_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

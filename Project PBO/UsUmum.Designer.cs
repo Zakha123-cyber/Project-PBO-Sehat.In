@@ -59,6 +59,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.Cursor = Cursors.Hand;
             pictureBox5.Image = Properties.Resources.BMI___IMT;
             pictureBox5.Location = new Point(43, 153);
             pictureBox5.Name = "pictureBox5";
@@ -121,6 +122,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Cursor = Cursors.Hand;
             pictureBox3.Image = Properties.Resources.FASKES;
             pictureBox3.Location = new Point(229, 153);
             pictureBox3.Name = "pictureBox3";
@@ -132,6 +134,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Cursor = Cursors.Hand;
             pictureBox4.Image = Properties.Resources.MENGHITUNG_KALORI;
             pictureBox4.Location = new Point(446, 153);
             pictureBox4.Name = "pictureBox4";
@@ -143,6 +146,7 @@
             // 
             // pictureBox6
             // 
+            pictureBox6.Cursor = Cursors.Hand;
             pictureBox6.Image = Properties.Resources.Group_237474;
             pictureBox6.Location = new Point(650, 120);
             pictureBox6.Name = "pictureBox6";
