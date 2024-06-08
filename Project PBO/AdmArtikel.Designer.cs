@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmArtikel));
             dataGridView1 = new DataGridView();
             HapusArtikel = new DataGridViewButtonColumn();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
@@ -47,6 +45,8 @@
             label3 = new Label();
             label1 = new Label();
             button7 = new Button();
+            pictureBox1 = new PictureBox();
+            namaadminartikel = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -82,17 +82,6 @@
             label2.Size = new Size(195, 37);
             label2.TabIndex = 19;
             label2.Text = "Daftar Artikel";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(14, 0);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(239, 221);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 17;
-            pictureBox1.TabStop = false;
             // 
             // button6
             // 
@@ -250,11 +239,34 @@
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Group_237472;
+            pictureBox1.Location = new Point(14, 13);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(239, 221);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 48;
+            pictureBox1.TabStop = false;
+            // 
+            // namaadminartikel
+            // 
+            namaadminartikel.AutoSize = true;
+            namaadminartikel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            namaadminartikel.Location = new Point(75, 184);
+            namaadminartikel.Name = "namaadminartikel";
+            namaadminartikel.Size = new Size(129, 28);
+            namaadminartikel.TabIndex = 49;
+            namaadminartikel.Text = "nama admin";
+            // 
             // AdmArtikel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 680);
+            Controls.Add(namaadminartikel);
+            Controls.Add(pictureBox1);
             Controls.Add(button7);
             Controls.Add(label1);
             Controls.Add(label8);
@@ -265,7 +277,6 @@
             Controls.Add(label3);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
-            Controls.Add(pictureBox1);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -303,5 +314,6 @@
         private Label label1;
         private Button button7;
         private DataGridViewButtonColumn HapusArtikel;
+        private Label namaadminartikel;
     }
 }

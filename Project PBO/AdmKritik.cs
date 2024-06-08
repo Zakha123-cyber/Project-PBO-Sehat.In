@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,36 @@ namespace Project_PBO
 {
     public partial class AdmKritik : Form
     {
+        private string email;
         public AdmKritik()
         {
             InitializeComponent();
             this.Load += new EventHandler(AdmKritik_Load);
+            email = Login.UserEmail;
         }
         private void AdmKritik_Load(object sender, EventArgs e)
         {
+            LoadData();
             SetButtonColors(button5);
+        }
+
+        private void LoadData()
+        {
+            //nama admin
+            //menampilkan nama admin
+            DataTable dt = datadiricontext.getdatadirinama(email);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string nama = dt.Rows[0]["nama"].ToString();
+                namaadminkritik.Text = nama;
+                
+                Console.WriteLine("Nama data loaded successfully.");
+            }
+            else
+            {
+                Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
+            }
+
         }
         private void SetButtonColors(Button activeButton)
         {

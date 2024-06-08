@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,10 +14,13 @@ namespace Project_PBO
 {
     public partial class Admin : Form
     {
+        private string email;
         public Admin()
         {
             InitializeComponent();
             this.Load += new EventHandler(Admin_Load);
+            email = Login.UserEmail;
+
         }
         private void Admin_Load(object sender, EventArgs e)
         {
@@ -54,6 +58,22 @@ namespace Project_PBO
             {
                 MessageBox.Show($"Error loading data: {ex.Message}");
             }
+
+            //menampilkan nama admin
+            DataTable dt = datadiricontext.getdatadirinama(email);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string nama = dt.Rows[0]["nama"].ToString();
+                namaadmin.Text = nama;
+                labelnama.Text = nama;
+                Console.WriteLine("Nama data loaded successfully.");
+            }
+            else
+            {
+                Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
+            }   
+
+
         }
 
         private void SetButtonColors(Button activeButton)
@@ -128,7 +148,12 @@ namespace Project_PBO
 
         private void namaadmin2_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void namaadmin_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

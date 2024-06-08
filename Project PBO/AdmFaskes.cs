@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,20 +8,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Project_PBO
 {
+    
     public partial class AdmFaskes : Form
     {
-
+        private string email;
         public AdmFaskes()
         {
             InitializeComponent();
             this.Load += new EventHandler(AdmFaskes_Load);
+            email = Login.UserEmail;
+
         }
         private void AdmFaskes_Load(object sender, EventArgs e)
         {
+            LoadData();
             SetButtonColors(button3);
+        }
+
+
+        private void LoadData()
+        {
+            DataTable dt = datadiricontext.getdatadirinama(email);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string nama = dt.Rows[0]["nama"].ToString();
+                namaadminfaskes.Text = nama;
+                Console.WriteLine("Nama data loaded successfully.");
+            }
+            else
+            {
+                Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
+            }
         }
         private void SetButtonColors(Button activeButton)
         {
@@ -82,6 +104,11 @@ namespace Project_PBO
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //kontol
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

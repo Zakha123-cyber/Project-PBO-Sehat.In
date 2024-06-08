@@ -8,10 +8,12 @@ namespace Project_PBO
 {
     public partial class AdmArtikel : Form
     {
+        private string email;
         public AdmArtikel()
         {
             InitializeComponent();
             this.Load += new EventHandler(AdmArtikel_Load);
+            email = Login.UserEmail;
         }
 
         private void AdmArtikel_Load(object sender, EventArgs e)
@@ -43,6 +45,19 @@ namespace Project_PBO
             catch (Exception ex)
             {
                 MessageBox.Show($"Error loading data: {ex.Message}");
+
+            }
+            //nama admin
+            DataTable dt = datadiricontext.getdatadirinama(email);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string nama = dt.Rows[0]["nama"].ToString();
+                namaadminartikel.Text = nama;
+                Console.WriteLine("Nama data loaded successfully.");
+            }
+            else
+            {
+                Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
             }
         }
 

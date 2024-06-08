@@ -35,6 +35,7 @@ namespace Project_PBO
             if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Please enter your email and password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
                 return;
             }
             try
@@ -53,6 +54,7 @@ namespace Project_PBO
                 {
                     // Mendapatkan id_jenis_profil dari hasil query
                     int idJenisProfil = Convert.ToInt32(dt.Rows[0]["id_jenis_profil"]);
+                    UserEmail = email;
 
                     // Menentukan apakah pengguna adalah admin atau user berdasarkan id_jenis_profil
                     if (idJenisProfil == 2) // Misalkan 1 adalah untuk admin
