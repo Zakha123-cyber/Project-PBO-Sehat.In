@@ -96,7 +96,7 @@ namespace Project_PBO
             tbemail.Name = "tbemail";
             tbemail.Size = new Size(203, 27);
             tbemail.TabIndex = 8;
-            tbemail.TextChanged += tbemail_TextChanged;
+            /*tbemail.TextChanged += tbemail_TextChanged;*/
             // 
             // tbpass
             // 
@@ -160,22 +160,13 @@ namespace Project_PBO
             Margin = new Padding(2, 3, 2, 3);
             Name = "Login";
             Text = "Form2";
-            Load += Login_Load;
+            /*Load += Login_Load;*/
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
-        private void tbemail_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
 
