@@ -8,29 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Project_PBO.App.Context;
+using Project_PBO.App.Core;
 
 
 namespace Project_PBO
 {
     public partial class UsRegistrasi : Form
     {
-        private readonly RegistrasiContext _dbContext;
 
         public UsRegistrasi()
         {
             InitializeComponent();
-            // Inisialisasi DatabaseContext dengan koneksi string
-            string connectionString = "Host=localhost;Username=postgres;Password=;Database=PBO;Port=5432";
-            try
-            {
-                _dbContext = new RegistrasiContext(connectionString);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Gagal membuat koneksi ke database: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                // Tambahkan penanganan kesalahan tambahan sesuai kebutuhan
-                // ...
-            }
         }
 
 
@@ -86,8 +74,7 @@ namespace Project_PBO
                 // Convert nomor telepon ke tipe long
                 if (long.TryParse(NoTelfonStr, out long noTelfon))
                 {
-                    // Panggil metode InsertProfil dari DatabaseContext
-                    _dbContext.InsertProfil(Username, Email, Pass, Alamat, Kota, Negara, noTelfon, idJenisProfil: 1);
+                    ProfilContext.InsertProfil(Username, Email, Pass, Alamat, Kota, Negara, noTelfon);
 
                     MessageBox.Show("Pendaftaran berhasil. Silakan login menggunakan informasi yang baru didaftarkan.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Login newForm = new Login();

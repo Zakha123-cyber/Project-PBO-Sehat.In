@@ -56,15 +56,15 @@ namespace Project_PBO
                     int idJenisProfil = Convert.ToInt32(dt.Rows[0]["id_jenis_profil"]);
                     UserEmail = email;
 
-                    // Menentukan apakah pengguna adalah admin atau user berdasarkan id_jenis_profil
-                    if (idJenisProfil == 2) // Misalkan 1 adalah untuk admin
+                 
+                    if (idJenisProfil == 2) // Misalkan 2 adalah untuk user
                     {
                         User newForm = new User();
                         newForm.Show();
                         this.Hide();
                         newForm.FormClosed += (s, args) => this.Close();
                     }
-                    else if (idJenisProfil == 1) // Misalkan 2 adalah untuk user
+                    else if (idJenisProfil == 1) // Misalkan 1 adalah untuk admin
                     {
                         Admin newForm = new Admin();
                         newForm.Show();
