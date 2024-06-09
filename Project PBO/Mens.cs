@@ -43,7 +43,8 @@ namespace Project_PBO
 
         private void button3_Click(object sender, EventArgs e)
         {
-            KalenderMens mens = new KalenderMens();
+            DateTime tanggalan = monthCalendar1.SelectionStart;
+            KalenderMens mens = new KalenderMens(tanggalan);
             mens.Show();
             this.Hide();
             mens.FormClosed += (s, args) => this.Close();

@@ -33,7 +33,7 @@ namespace Project_PBO.App.Context
                 new NpgsqlParameter("@kota", DbType.String) {Value = kota},
                 new NpgsqlParameter("@negara", DbType.String) { Value = negara},
                 new NpgsqlParameter("@no_telfon", DbType.Int64) {Value=noTelfon},
-                new NpgsqlParameter("@id_jenis_profil", DbType.Int32) {Value = 1}
+                new NpgsqlParameter("@id_jenis_profil", DbType.Int32) {Value = 2}
             };
             queryExecutor(query, param);
         }
