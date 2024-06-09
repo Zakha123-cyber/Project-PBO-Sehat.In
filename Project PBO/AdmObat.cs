@@ -17,6 +17,10 @@ namespace Project_PBO
         public AdmObat()
         {
             InitializeComponent();
+            DataTable penyakit = PenyakitContext.getAllPenyakit();
+            listpenyakit.DataSource = penyakit;
+            listpenyakit.DisplayMember = "nama_penyakit";
+            listpenyakit.ValueMember = "nama_penyakit";
             this.Load += new EventHandler(AdmObat_Load);
             email = Login.UserEmail;
         }

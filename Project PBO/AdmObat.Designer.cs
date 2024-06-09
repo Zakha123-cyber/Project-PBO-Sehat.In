@@ -33,7 +33,6 @@
             label8 = new Label();
             textBox3 = new TextBox();
             label6 = new Label();
-            textBox2 = new TextBox();
             textBox1 = new TextBox();
             label3 = new Label();
             dataGridView1 = new DataGridView();
@@ -50,6 +49,7 @@
             label5 = new Label();
             pictureBox1 = new PictureBox();
             namaadminubat = new Label();
+            listpenyakit = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -105,14 +105,6 @@
             label6.Size = new Size(51, 20);
             label6.TabIndex = 60;
             label6.Text = "Nama";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(289, 383);
-            textBox2.Margin = new Padding(2, 3, 2, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(367, 27);
-            textBox2.TabIndex = 59;
             // 
             // textBox1
             // 
@@ -286,11 +278,20 @@
             namaadminubat.TabIndex = 93;
             namaadminubat.Text = "nama admin";
             // 
+            // listpenyakit
+            // 
+            listpenyakit.FormattingEnabled = true;
+            listpenyakit.Location = new Point(290, 386);
+            listpenyakit.Name = "listpenyakit";
+            listpenyakit.Size = new Size(366, 28);
+            listpenyakit.TabIndex = 94;
+            // 
             // AdmObat
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 680);
+            Controls.Add(listpenyakit);
             Controls.Add(namaadminubat);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
@@ -302,7 +303,6 @@
             Controls.Add(label8);
             Controls.Add(textBox3);
             Controls.Add(label6);
-            Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(dataGridView1);
@@ -329,7 +329,6 @@
         private Label label8;
         private TextBox textBox3;
         private Label label6;
-        private TextBox textBox2;
         private TextBox textBox1;
         private Label label3;
         private DataGridView dataGridView1;
@@ -346,5 +345,6 @@
         private Label label5;
         private PictureBox pictureBox1;
         private Label namaadminubat;
+        private ComboBox listpenyakit;
     }
 }
