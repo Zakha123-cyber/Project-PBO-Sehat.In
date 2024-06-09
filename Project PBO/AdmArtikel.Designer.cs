@@ -47,6 +47,8 @@
             button7 = new Button();
             pictureBox1 = new PictureBox();
             namaadminartikel = new Label();
+            label4 = new Label();
+            listpenyakit = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -260,11 +262,32 @@
             namaadminartikel.TabIndex = 49;
             namaadminartikel.Text = "nama admin";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(693, 291);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(69, 20);
+            label4.TabIndex = 50;
+            label4.Text = "Penyakit";
+            // 
+            // listpenyakit
+            // 
+            listpenyakit.FormattingEnabled = true;
+            listpenyakit.Location = new Point(692, 315);
+            listpenyakit.Name = "listpenyakit";
+            listpenyakit.Size = new Size(339, 28);
+            listpenyakit.TabIndex = 51;
+            // 
             // AdmArtikel
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 680);
+            Controls.Add(listpenyakit);
+            Controls.Add(label4);
             Controls.Add(namaadminartikel);
             Controls.Add(pictureBox1);
             Controls.Add(button7);
@@ -315,5 +338,7 @@
         private Button button7;
         private DataGridViewButtonColumn HapusArtikel;
         private Label namaadminartikel;
+        private Label label4;
+        private ComboBox listpenyakit;
     }
 }
