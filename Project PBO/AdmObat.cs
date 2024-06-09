@@ -18,7 +18,7 @@ namespace Project_PBO
         {
             InitializeComponent();
             this.Load += new EventHandler(AdmObat_Load);
-            email= Login.UserEmail;
+            email = Login.UserEmail;
         }
         private void AdmObat_Load(object sender, EventArgs e)
 
@@ -30,19 +30,43 @@ namespace Project_PBO
         // Load data
         private void LoadData()
         {
-            
+
             //menampilkan nama admin
             DataTable dt = datadiricontext.getdatadirinama(email);
             if (dt != null && dt.Rows.Count > 0)
             {
                 string nama = dt.Rows[0]["nama"].ToString();
                 namaadminubat.Text = nama;
-               
+
                 Console.WriteLine("Nama data loaded successfully.");
             }
             else
             {
                 Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
+            }
+
+            //menampilkan data obat dari obatcontext
+            try
+            {
+                obatcontext obat = new obatcontext();
+                DataTable obatData = obat.getAll();
+                if (obatData != null)
+                {
+                    dataGridView1.DataSource = obatData;
+                    dataGridView1.Columns[0].HeaderText = "Nama Obat";
+                    dataGridView1.Columns[1].HeaderText = "Fungsi";
+                    dataGridView1.Columns[2].HeaderText = "Dosis";
+                    dataGridView1.Columns[3].HeaderText = "Penyakit";
+                    dataGridView1.Columns[4].HeaderText = "Jenis";
+                }
+                else
+                {
+                    MessageBox.Show("No data retrieved from the database.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}");
             }
         }
         private void SetButtonColors(Button activeButton)
@@ -104,6 +128,11 @@ namespace Project_PBO
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
