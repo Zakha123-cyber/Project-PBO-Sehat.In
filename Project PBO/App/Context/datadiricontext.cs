@@ -35,5 +35,17 @@ namespace Project_PBO.App.Context
             };
             return queryExecutor(query, parameters);
         }
+        public static void editdatadiri(string email, string nama, long no_telfon, string alamat)
+        {
+            string query = "UPDATE profil SET nama = @Nama, no_telfon = @No_telfon, alamat = @Alamat WHERE email = @Email";
+            NpgsqlParameter[] parameters =
+            {
+        new NpgsqlParameter("@Nama", nama) { NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar },
+        new NpgsqlParameter("@No_telfon", no_telfon) { NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Integer },
+        new NpgsqlParameter("@Alamat", alamat) { NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar },
+        new NpgsqlParameter("@Email", email) { NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar }
+    };
+            commandExecutor(query, parameters);
+        }
     }
 }
