@@ -53,7 +53,8 @@ namespace Project_PBO
 
         private void button4_Click(object sender, EventArgs e)
         {
-            PrediksiHamil hamil = new PrediksiHamil();
+            DateTime lastmens = monthCalendar1.SelectionStart;
+            PrediksiHamil hamil = new PrediksiHamil(lastmens);
             hamil.Show();
             this.Hide();
             hamil.FormClosed += (s, args) => this.Close();
