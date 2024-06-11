@@ -1,4 +1,5 @@
-﻿using Project_PBO.App.Core;
+﻿using Npgsql;
+using Project_PBO.App.Core;
 using System;
 using System.Data;
 
@@ -25,12 +26,22 @@ namespace Project_PBO.App.Context
         }
 
         //insert kritik dan sarannya
-        public static void insert(string kritik, string saran, int id)
+        public static void Insert(string kritik, string saran, int userId)
         {
-            //insert kritik dan sarannya
-            string query = $"INSERT INTO {keluhantable} (detail_kritik, detail_saran, id_pelanggan) VALUES ({kritik}, {saran}, {id})";
-            queryExecutor(query);
+            // SQL query with parameter placeholders
+            string query = $@"
+                INSERT INTO {keluhantable} (detail_kritik, detail_saran, id_pelanggan)
+                VALUES (@kritik, @saran, @userId)";
+
+            // Create a list of parameters
+            NpgsqlParameter[] param = {
+                new NpgsqlParameter("@kritik", kritik),
+                new NpgsqlParameter("@saran", saran),
+                new NpgsqlParameter("@userId", userId)
+                };
+            commandExecutor(query, param);
         }
+
     }
 
 }

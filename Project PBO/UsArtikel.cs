@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace Project_PBO
         public UsArtikel()
         {
             InitializeComponent();
+            //menampilkan data dari database ke datagridview
+            DataTable artikel = Artikelcontext.all();
+            if (artikel != null)
+            {
+                dataGridView1.DataSource = artikel;
+                dataGridView1.Columns["id_artikel"].Visible = false;
+            }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -52,5 +52,9 @@ namespace Project_PBO
             this.Hide();
         }
 
+        private void User_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

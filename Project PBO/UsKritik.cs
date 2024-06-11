@@ -13,11 +13,12 @@ namespace Project_PBO
 {
     public partial class UsKritik : Form
     {
-        private int get_id;
-        public UsKritik(int get_id)
+        private string UserID;
+        public UsKritik()
         {
             InitializeComponent();
-            this.get_id = get_id;
+            this.UserID = UserID;
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -69,12 +70,48 @@ namespace Project_PBO
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //insert kritik saran
-            this.Close();
-            string kritik = tbkritik.Text;
-            string saran = tbsaran.Text;
-            kritikSaranContext.insert(kritik, saran, get_id);
+            // Capture feedback from text boxes
+            string kritik = tbkritik.Text.Trim();
+            string saran = tbsaran.Text.Trim();
 
+            // Ensure that the feedback is not empty
+            if (string.IsNullOrEmpty(kritik) && string.IsNullOrEmpty(saran))
+            {
+                MessageBox.Show("Please enter your feedback.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Get the current user's ID from the login session
+            int? userId = Login.UserId;
+
+            if (userId == null)
+            {
+                MessageBox.Show("User ID is not available. Please login again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                // Insert feedback into the database using the context
+                kritikSaranContext.Insert(kritik, saran, userId.Value);
+                MessageBox.Show("Thank you for your feedback!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Close the form
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
+
+
+
+
+
+
     }
-}
+    }
+

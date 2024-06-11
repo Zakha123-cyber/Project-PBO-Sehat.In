@@ -21,6 +21,7 @@ namespace Project_PBO
     public partial class Login : Form
     {
         public static string? UserEmail { get; internal set; }
+        public static int? UserId { get; internal set; }
 
         public Login()
         {
@@ -55,8 +56,9 @@ namespace Project_PBO
                     // Mendapatkan id_jenis_profil dari hasil query
                     int idJenisProfil = Convert.ToInt32(dt.Rows[0]["id_jenis_profil"]);
                     UserEmail = email;
+                    UserId = Convert.ToInt32(dt.Rows[0]["id_profil"]);
 
-                 
+
                     if (idJenisProfil == 2) // Misalkan 2 adalah untuk user
                     {
                         User newForm = new User();

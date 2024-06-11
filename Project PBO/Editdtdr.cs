@@ -71,5 +71,11 @@ namespace Project_PBO
         {
             //alamat baru
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UsKritik kritik = new UsKritik();
+            kritik.Show();
+        }
     }
 }

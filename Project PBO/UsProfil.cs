@@ -70,6 +70,7 @@ namespace Project_PBO
             kritik.Show();
             this.Hide();
             kritik.FormClosed += (s, args) => this.Close();
+
         }
     }
 }
