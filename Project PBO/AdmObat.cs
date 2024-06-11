@@ -52,8 +52,9 @@ namespace Project_PBO
             //menampilkan data obat dari obatcontext
             try
             {
-                obatcontext obat = new obatcontext();
-                DataTable obatData = obat.getAll();
+                obatcontext obatcontext = new obatcontext();
+                DataTable obatData = obatcontext.getAll();
+
                 if (obatData != null)
                 {
                     dataGridView1.DataSource = obatData;
@@ -139,6 +140,57 @@ namespace Project_PBO
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void listpenyakit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //menambahkan data id penyakit
+            listpenyakit.DisplayMember = "id_penyakit";
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //menambahkan data nama obat
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //menambah data
+            try
+            {
+                string nama_obat = textBox1.Text;
+                string fungsi = textBox5.Text;
+                string dosis = textBox3.Text;
+                int penyakit = Convert.ToInt32(listpenyakit.SelectedValue);
+                string jenis = textBox4.Text;
+
+                obatcontext obatcontext = new obatcontext();
+                obatcontext.insert(nama_obat, fungsi, dosis, penyakit, jenis);
+                MessageBox.Show("Data berhasil ditambahkan");
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error adding data: {ex.Message}");
+            }   
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            //kategori dosis
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            //kategori jenis
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            //kategori fungsi
         }
     }
 }

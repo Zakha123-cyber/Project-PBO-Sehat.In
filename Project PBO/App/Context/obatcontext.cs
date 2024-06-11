@@ -28,13 +28,28 @@ namespace Project_PBO.App.Context
                 p.nama_penyakit AS Penyakit, 
                 j.jenis AS Jenis
             FROM {obatTable} a
-            JOIN {penyakitTable} p ON a.penyakit_id = p.id_penyakit
-            JOIN {jenisTable} j ON a.jenis_id = j.id_jenis";
+            JOIN {penyakitTable} p ON a.id_penyakit = p.id_penyakit
+            JOIN {jenisTable} j ON a.id_jenis = j.id_jenis";
             return queryExecutor(query);
         }
-        
 
+        //insert data
+        public void insert(string nama_obat, string fungsi, string dosis, int penyakit, string jenis)
+        {
+            string query = $"INSERT INTO {obatTable} (nama_obat, fungsi, dosis, id_penyakit, id_jenis) VALUES (@nama_obat, @fungsi, @dosis, @penyakit, @jenis)";
+            NpgsqlParameter[] parameters =
+            {
+                new NpgsqlParameter("@nama_obat", NpgsqlTypes.NpgsqlDbType.Varchar){Value = nama_obat},
+                new NpgsqlParameter("@fungsi", NpgsqlTypes.NpgsqlDbType.Varchar){Value = fungsi},
+                new NpgsqlParameter("@dosis", NpgsqlTypes.NpgsqlDbType.Varchar){Value = dosis},
+                new NpgsqlParameter("@penyakit", NpgsqlTypes.NpgsqlDbType.Integer){Value = penyakit},
+                new NpgsqlParameter("@jenis", NpgsqlTypes.NpgsqlDbType.Varchar){Value = jenis},
+            };
+            commandExecutor(query, parameters);
         }
 
-  }
+
+    }
+
+}
 

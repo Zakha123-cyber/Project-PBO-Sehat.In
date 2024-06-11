@@ -21,20 +21,21 @@ namespace Project_PBO.App.Context
             string query = $@"
         SELECT 
             a.id_artikel, 
-            a.judul AS Nama, 
+            a.judul AS Judul, 
             a.sumber AS Sumber, 
             p.nama_penyakit AS Penyakit 
         FROM {artikelTable} a
-        JOIN {penyakitTable} p ON a.penyakit_id = p.id_penyakit";
+        JOIN {penyakitTable} p ON a.id_penyakit = p.id_penyakit";
 
             return queryExecutor(query);
         }
 
 
         //insert sumber
-        public static void insert(string judul, string sumber)
+        public static void insert(string judul, string sumber, string penyakit)
         {
-            string query = $"INSERT INTO {artikelTable} (judul, sumber) VALUES ('{judul}', '{sumber}')";
+            //insert artikel dan penyakitnya
+            string query = $"INSERT INTO {artikelTable} (judul, sumber) VALUES (@judul, @sumber, @penyakit)";
             queryExecutor(query);
         }
 

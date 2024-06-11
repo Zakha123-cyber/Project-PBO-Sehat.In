@@ -280,6 +280,7 @@
             listpenyakit.Name = "listpenyakit";
             listpenyakit.Size = new Size(339, 28);
             listpenyakit.TabIndex = 51;
+            listpenyakit.SelectedIndexChanged += listpenyakit_SelectedIndexChanged;
             // 
             // AdmArtikel
             // 

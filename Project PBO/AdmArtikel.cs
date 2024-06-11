@@ -15,7 +15,7 @@ namespace Project_PBO
             DataTable penyakit = PenyakitContext.getAllPenyakit();
             listpenyakit.DataSource = penyakit;
             listpenyakit.DisplayMember = "nama_penyakit";
-            listpenyakit.ValueMember = "nama_penyakit";
+            listpenyakit.ValueMember = "id_penyakit";
             this.Load += new EventHandler(AdmArtikel_Load);
             email = Login.UserEmail;
         }
@@ -146,7 +146,7 @@ namespace Project_PBO
 
         }
 
-    private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             // Handle text change if needed
         }
@@ -172,8 +172,8 @@ namespace Project_PBO
 
             try
             {
-                // Insert into database
-                Artikelcontext.insert(textBox1.Text, textBox2.Text);
+                // insert database
+                Artikelcontext.insert(textBox1.Text, textBox2.Text, listpenyakit.SelectedValue.ToString());
                 MessageBox.Show("Data berhasil ditambahkan");
 
                 // Refresh the DataGridView after inserting data
@@ -187,6 +187,12 @@ namespace Project_PBO
             {
                 MessageBox.Show($"Error inserting data: {ex.Message}");
             }
+        }
+
+        private void listpenyakit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //id penyakit
+            
         }
     }
 }

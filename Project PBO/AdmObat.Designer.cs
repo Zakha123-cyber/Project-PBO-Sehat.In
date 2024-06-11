@@ -64,6 +64,7 @@
             button7.TabIndex = 64;
             button7.Text = "Upload";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // label1
             // 
@@ -94,6 +95,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(367, 27);
             textBox3.TabIndex = 61;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label6
             // 
@@ -113,6 +115,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(367, 27);
             textBox1.TabIndex = 58;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label3
             // 
@@ -225,6 +228,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(367, 27);
             textBox4.TabIndex = 65;
+            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // textBox5
             // 
@@ -233,6 +237,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(367, 27);
             textBox5.TabIndex = 66;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // label4
             // 
@@ -285,6 +290,7 @@
             listpenyakit.Name = "listpenyakit";
             listpenyakit.Size = new Size(366, 28);
             listpenyakit.TabIndex = 94;
+            listpenyakit.SelectedIndexChanged += listpenyakit_SelectedIndexChanged;
             // 
             // AdmObat
             // 
