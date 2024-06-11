@@ -14,12 +14,14 @@ namespace Project_PBO
     public partial class Datadiri : Form
     {
         private string email;
+        private int id;
 
         public Datadiri()
         {
             InitializeComponent();
             email = Login.UserEmail;
             LoadUserData();
+            
 
 
 
@@ -105,7 +107,18 @@ namespace Project_PBO
 
         private void button4_Click(object sender, EventArgs e)
         {
-            UsKritik kritik = new UsKritik();
+            DataTable dt = App.Context.datadiricontext.getdatadiriid(email);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                int id = Int32.Parse(dt.Rows[0]["id_profil"].ToString());
+                this.id = id;
+                Console.WriteLine("id data loaded successfully.");
+            }
+            else
+            {
+                Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
+            }
+            UsKritik kritik = new UsKritik(id);
             kritik.Show();
             this.Hide();
             kritik.FormClosed += (s, args) => this.Close();

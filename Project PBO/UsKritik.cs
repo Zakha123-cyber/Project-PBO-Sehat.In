@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project_PBO.App.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,16 @@ namespace Project_PBO
 {
     public partial class UsKritik : Form
     {
-        public UsKritik()
+        private int get_id;
+        public UsKritik(int get_id)
         {
             InitializeComponent();
+            this.get_id = get_id;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            //saran
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -57,6 +60,21 @@ namespace Project_PBO
             form.Show();
             this.Hide();
             form.FormClosed += (s, args) => this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //kritik
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //insert kritik saran
+            this.Close();
+            string kritik = tbkritik.Text;
+            string saran = tbsaran.Text;
+            kritikSaranContext.insert(kritik, saran, get_id);
+
         }
     }
 }

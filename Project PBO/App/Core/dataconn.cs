@@ -11,9 +11,9 @@ namespace Project_PBO.App.Core
     public class dataconn
     {
         private static readonly string DB_HOST = "localhost";
-        private static readonly string DB_DATABASE = "DB_SEHATINNEW";
+        private static readonly string DB_DATABASE = "Sehatins";
         private static readonly string DB_USERNAME = "postgres";
-        private static readonly string DB_PASSWORD = "zakhaaditya";
+        private static readonly string DB_PASSWORD = "1802";
         private static readonly string DB_PORT = "5432";
 
         private static NpgsqlConnection connection;

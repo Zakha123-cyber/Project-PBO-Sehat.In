@@ -17,32 +17,45 @@ namespace Project_PBO
         public AdmKritik()
         {
             InitializeComponent();
-            this.Load += new EventHandler(AdmKritik_Load);
+            this.Load += new EventHandler(Admin_Load);
             email = Login.UserEmail;
+
         }
-        private void AdmKritik_Load(object sender, EventArgs e)
+        private void Admin_Load(object sender, EventArgs e)
         {
             LoadData();
-            SetButtonColors(button5);
+            SetButtonColors(button1);
         }
 
         private void LoadData()
         {
-            //nama admin
-            //menampilkan nama admin
-            DataTable dt = datadiricontext.getdatadirinama(email);
-            if (dt != null && dt.Rows.Count > 0)
+            try
             {
-                string nama = dt.Rows[0]["nama"].ToString();
-                namaadminkritik.Text = nama;
-                
-                Console.WriteLine("Nama data loaded successfully.");
-            }
-            else
-            {
-                Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
-            }
+                // Menampilkan data dari database ke DataGridView
+                DataTable keluhan = kritikSaranContext.all();
+                if (keluhan != null && keluhan.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = keluhan;
 
+                    // Mengatur header kolom sesuai dengan kebutuhan
+                    dataGridView1.Columns[0].HeaderText = "No"; // Nomor urut
+                    dataGridView1.Columns[1].Visible = false;
+                    dataGridView1.Columns[2].HeaderText = "kritik";
+                    dataGridView1.Columns[3].HeaderText = "saran";
+                    dataGridView1.Columns[4].HeaderText = "Nama";
+
+                    // Menyesuaikan kolom agar mengisi lebar DataGridView
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+                else
+                {
+                    MessageBox.Show("No data retrieved from the database.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}");
+            }
         }
         private void SetButtonColors(Button activeButton)
         {

@@ -6,6 +6,14 @@ namespace Project_PBO.App.Context
 {
     public class datadiricontext : dataconn
     {
+        public static DataTable getdatadiriid(string email)
+        {
+            string query = "SELECT id_profil FROM profil WHERE email = @Email";
+            NpgsqlParameter[] parameters = {
+                new NpgsqlParameter("@Email", email) { NpgsqlDbType = NpgsqlTypes.NpgsqlDbType.Varchar }
+            };
+            return queryExecutor(query, parameters);
+        }
         // Mengambil nama user yang login
         public static DataTable getdatadirinama(string email)
         {
