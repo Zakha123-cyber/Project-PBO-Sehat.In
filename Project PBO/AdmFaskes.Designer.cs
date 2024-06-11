@@ -30,17 +30,18 @@
         {
             label5 = new Label();
             label4 = new Label();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
+            tbkota = new TextBox();
+            tbwebsite = new TextBox();
             button7 = new Button();
             label1 = new Label();
             label8 = new Label();
-            textBox3 = new TextBox();
+            tbnohp = new TextBox();
             label6 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbalamat = new TextBox();
+            tbnama = new TextBox();
             label3 = new Label();
             dataGridView1 = new DataGridView();
+            Hapus = new DataGridViewButtonColumn();
             label2 = new Label();
             button6 = new Button();
             button5 = new Button();
@@ -50,6 +51,8 @@
             button1 = new Button();
             pictureBox1 = new PictureBox();
             namaadminfaskes = new Label();
+            label7 = new Label();
+            tbjamoper = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -72,25 +75,25 @@
             label4.Location = new Point(289, 577);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(125, 20);
+            label4.Size = new Size(42, 20);
             label4.TabIndex = 88;
-            label4.Text = "Jam Operasional";
+            label4.Text = "Kota";
             // 
-            // textBox5
+            // tbkota
             // 
-            textBox5.Location = new Point(289, 600);
-            textBox5.Margin = new Padding(2, 3, 2, 3);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(367, 27);
-            textBox5.TabIndex = 87;
+            tbkota.Location = new Point(289, 600);
+            tbkota.Margin = new Padding(2, 3, 2, 3);
+            tbkota.Name = "tbkota";
+            tbkota.Size = new Size(367, 27);
+            tbkota.TabIndex = 87;
             // 
-            // textBox4
+            // tbwebsite
             // 
-            textBox4.Location = new Point(289, 525);
-            textBox4.Margin = new Padding(2, 3, 2, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(367, 27);
-            textBox4.TabIndex = 86;
+            tbwebsite.Location = new Point(289, 525);
+            tbwebsite.Margin = new Padding(2, 3, 2, 3);
+            tbwebsite.Name = "tbwebsite";
+            tbwebsite.Size = new Size(367, 27);
+            tbwebsite.TabIndex = 86;
             // 
             // button7
             // 
@@ -102,6 +105,7 @@
             button7.TabIndex = 85;
             button7.Text = "Upload";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // label1
             // 
@@ -125,13 +129,13 @@
             label8.TabIndex = 83;
             label8.Text = "Alamat";
             // 
-            // textBox3
+            // tbnohp
             // 
-            textBox3.Location = new Point(289, 457);
-            textBox3.Margin = new Padding(2, 3, 2, 3);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(367, 27);
-            textBox3.TabIndex = 82;
+            tbnohp.Location = new Point(289, 457);
+            tbnohp.Margin = new Padding(2, 3, 2, 3);
+            tbnohp.Name = "tbnohp";
+            tbnohp.Size = new Size(367, 27);
+            tbnohp.TabIndex = 82;
             // 
             // label6
             // 
@@ -144,21 +148,21 @@
             label6.TabIndex = 81;
             label6.Text = "Nama";
             // 
-            // textBox2
+            // tbalamat
             // 
-            textBox2.Location = new Point(289, 383);
-            textBox2.Margin = new Padding(2, 3, 2, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(367, 27);
-            textBox2.TabIndex = 80;
+            tbalamat.Location = new Point(289, 383);
+            tbalamat.Margin = new Padding(2, 3, 2, 3);
+            tbalamat.Name = "tbalamat";
+            tbalamat.Size = new Size(367, 27);
+            tbalamat.TabIndex = 80;
             // 
-            // textBox1
+            // tbnama
             // 
-            textBox1.Location = new Point(289, 316);
-            textBox1.Margin = new Padding(2, 3, 2, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(367, 27);
-            textBox1.TabIndex = 79;
+            tbnama.Location = new Point(289, 316);
+            tbnama.Margin = new Padding(2, 3, 2, 3);
+            tbnama.Name = "tbnama";
+            tbnama.Size = new Size(367, 27);
+            tbnama.TabIndex = 79;
             // 
             // label3
             // 
@@ -174,6 +178,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Hapus });
             dataGridView1.Location = new Point(289, 55);
             dataGridView1.Margin = new Padding(2, 3, 2, 3);
             dataGridView1.Name = "dataGridView1";
@@ -181,6 +186,15 @@
             dataGridView1.Size = new Size(743, 167);
             dataGridView1.TabIndex = 77;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // Hapus
+            // 
+            Hapus.HeaderText = "Action";
+            Hapus.MinimumWidth = 6;
+            Hapus.Name = "Hapus";
+            Hapus.Text = "Hapus";
+            Hapus.UseColumnTextForButtonValue = true;
+            Hapus.Width = 125;
             // 
             // label2
             // 
@@ -285,24 +299,46 @@
             namaadminfaskes.TabIndex = 91;
             namaadminfaskes.Text = "nama admin";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(669, 293);
+            label7.Margin = new Padding(2, 0, 2, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(125, 20);
+            label7.TabIndex = 93;
+            label7.Text = "Jam Operasional";
+            label7.Click += label7_Click;
+            // 
+            // tbjamoper
+            // 
+            tbjamoper.Location = new Point(669, 316);
+            tbjamoper.Margin = new Padding(2, 3, 2, 3);
+            tbjamoper.Name = "tbjamoper";
+            tbjamoper.Size = new Size(367, 27);
+            tbjamoper.TabIndex = 92;
+            // 
             // AdmFaskes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1045, 680);
+            Controls.Add(label7);
+            Controls.Add(tbjamoper);
             Controls.Add(namaadminfaskes);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
+            Controls.Add(tbkota);
+            Controls.Add(tbwebsite);
             Controls.Add(button7);
             Controls.Add(label1);
             Controls.Add(label8);
-            Controls.Add(textBox3);
+            Controls.Add(tbnohp);
             Controls.Add(label6);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbalamat);
+            Controls.Add(tbnama);
             Controls.Add(label3);
             Controls.Add(dataGridView1);
             Controls.Add(label2);
@@ -325,15 +361,15 @@
 
         private Label label5;
         private Label label4;
-        private TextBox textBox5;
-        private TextBox textBox4;
+        private TextBox tbkota;
+        private TextBox tbwebsite;
         private Button button7;
         private Label label1;
         private Label label8;
-        private TextBox textBox3;
+        private TextBox tbnohp;
         private Label label6;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbalamat;
+        private TextBox tbnama;
         private Label label3;
         private DataGridView dataGridView1;
         private Label label2;
@@ -345,5 +381,8 @@
         private Button button1;
         private PictureBox pictureBox1;
         private Label namaadminfaskes;
+        private DataGridViewButtonColumn Hapus;
+        private Label label7;
+        private TextBox tbjamoper;
     }
 }

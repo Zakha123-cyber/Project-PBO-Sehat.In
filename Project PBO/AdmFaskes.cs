@@ -12,7 +12,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Project_PBO
 {
-    
+
     public partial class AdmFaskes : Form
     {
         private string email;
@@ -32,6 +32,33 @@ namespace Project_PBO
 
         private void LoadData()
         {
+            try
+            {
+                //menampilkan data dari database ke datagridview
+                DataTable faskes = faskescontext.GetAllFaskes();
+                if (faskes != null)
+                {
+                    dataGridView1.DataSource = faskes;
+                    dataGridView1.Columns[0].HeaderText = "Action";
+                    dataGridView1.Columns[1].HeaderText = "id_faskes";
+                    dataGridView1.Columns[2].HeaderText = "nama_faskes";
+                    dataGridView1.Columns[3].HeaderText = "alamat";
+                    dataGridView1.Columns[4].HeaderText = "kota";
+                    dataGridView1.Columns[5].HeaderText = "no_telfon";
+                    dataGridView1.Columns[6].HeaderText = "website";
+                    dataGridView1.Columns[7].HeaderText = "jam operasional";
+                }
+                else
+                {
+                    MessageBox.Show("No data retrieved from the database.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}");
+
+            }
+            //nama admin
             DataTable dt = datadiricontext.getdatadirinama(email);
             if (dt != null && dt.Rows.Count > 0)
             {
@@ -103,10 +130,71 @@ namespace Project_PBO
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //kontol
+            if (e.ColumnIndex == 0)
+            {
+                try
+                {
+                    int idfaskes = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells["id_faskes"].Value.ToString());
+
+                    DialogResult dialogResult = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Hapus Data", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        faskescontext.delete(idfaskes);
+                        MessageBox.Show("Data berhasil dihapus");
+                        LoadData();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error deleting data: {ex.Message}");
+                }
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string nama = tbnama.Text;
+            string alamat = tbalamat.Text;
+            string kota = tbkota.Text;
+            int nohp = Int32.Parse(tbnohp.Text);
+            string website = tbwebsite.Text;
+            string jamoper = tbjamoper.Text;
+
+            if (string.IsNullOrWhiteSpace(tbnama.Text) || string.IsNullOrWhiteSpace(tbalamat.Text))
+            {
+                MessageBox.Show("Data tidak boleh kosong");
+                return;
+            }
+
+            try
+            {
+                // insert database
+                faskescontext.insert(nama, alamat, kota, nohp, website, jamoper);
+                MessageBox.Show("Data berhasil ditambahkan");
+
+                // Refresh the DataGridView after inserting data
+                LoadData();
+
+                // Clear text boxes after insertion
+                tbnama.Clear();
+                tbalamat.Clear();
+                tbjamoper.Clear();
+                tbnohp.Clear();
+                tbwebsite.Clear();
+                tbkota.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error inserting data: {ex.Message}");
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

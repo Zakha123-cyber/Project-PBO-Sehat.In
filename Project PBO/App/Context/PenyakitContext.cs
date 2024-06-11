@@ -1,4 +1,6 @@
-﻿using Project_PBO.App.Core;
+﻿using Npgsql;
+using NpgsqlTypes;
+using Project_PBO.App.Core;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +14,7 @@ namespace Project_PBO.App.Context
     {
         public static DataTable getAllPenyakit()
         {
-            string query = "SELECT nama_penyakit FROM penyakit";
+            string query = "SELECT * FROM penyakit";
             DataTable dt = queryExecutor(query);
             return dt;
         }
