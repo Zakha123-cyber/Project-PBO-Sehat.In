@@ -473,6 +473,16 @@ namespace Project_PBO.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Rectangle_1180__5_ {
+            get {
+                object obj = ResourceManager.GetObject("Rectangle 1180 (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SARAN_OBAT {
             get {
                 object obj = ResourceManager.GetObject("SARAN OBAT", resourceCulture);
@@ -526,6 +536,16 @@ namespace Project_PBO.Properties {
         internal static System.Drawing.Bitmap Umum {
             get {
                 object obj = ResourceManager.GetObject("Umum", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vector_4 {
+            get {
+                object obj = ResourceManager.GetObject("Vector 4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -57,7 +57,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { HapusArtikel });
             dataGridView1.Location = new Point(252, 41);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(650, 125);
@@ -173,7 +173,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(252, 287);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(308, 23);
             textBox2.TabIndex = 41;
@@ -182,7 +182,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(252, 237);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(308, 23);
             textBox1.TabIndex = 40;
@@ -213,7 +213,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Group_237472;
-            pictureBox1.Location = new Point(12, 10);
+            pictureBox1.Location = new Point(12, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(209, 166);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -222,13 +222,13 @@
             // 
             // namaadminartikel
             // 
-            namaadminartikel.AutoSize = true;
             namaadminartikel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            namaadminartikel.Location = new Point(66, 138);
+            namaadminartikel.Location = new Point(24, 123);
             namaadminartikel.Name = "namaadminartikel";
-            namaadminartikel.Size = new Size(106, 21);
+            namaadminartikel.Size = new Size(188, 52);
             namaadminartikel.TabIndex = 49;
-            namaadminartikel.Text = "nama admin";
+            namaadminartikel.Text = "-------nama admin-------";
+            namaadminartikel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -274,7 +274,7 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "AdmArtikel";
             Text = "AdmArtikel";
             Load += AdmArtikel_Load;

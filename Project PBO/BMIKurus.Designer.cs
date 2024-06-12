@@ -203,7 +203,7 @@ namespace Project_PBO
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.Rectangle_1180__3_;
+            pictureBox2.Image = Properties.Resources.Rectangle_1180__5_;
             pictureBox2.Location = new Point(333, 139);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(272, 228);
@@ -216,7 +216,7 @@ namespace Project_PBO
             label6.AutoSize = true;
             label6.BackColor = Color.White;
             label6.Font = new Font("Segoe UI", 6.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(375, 295);
+            label6.Location = new Point(375, 313);
             label6.Name = "label6";
             label6.Size = new Size(195, 24);
             label6.TabIndex = 81;
@@ -228,7 +228,7 @@ namespace Project_PBO
             label9.BackColor = Color.White;
             label9.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = Color.Goldenrod;
-            label9.Location = new Point(408, 214);
+            label9.Location = new Point(407, 223);
             label9.Name = "label9";
             label9.Size = new Size(113, 43);
             label9.TabIndex = 85;
@@ -253,7 +253,7 @@ namespace Project_PBO
             label5.AutoSize = true;
             label5.BackColor = Color.White;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(394, 181);
+            label5.Location = new Point(394, 176);
             label5.Name = "label5";
             label5.Size = new Size(143, 21);
             label5.TabIndex = 80;

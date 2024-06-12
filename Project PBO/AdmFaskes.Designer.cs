@@ -82,7 +82,7 @@
             // tbkota
             // 
             tbkota.Location = new Point(253, 394);
-            tbkota.Margin = new Padding(2, 2, 2, 2);
+            tbkota.Margin = new Padding(2);
             tbkota.Name = "tbkota";
             tbkota.Size = new Size(277, 23);
             tbkota.TabIndex = 87;
@@ -90,7 +90,7 @@
             // tbwebsite
             // 
             tbwebsite.Location = new Point(594, 340);
-            tbwebsite.Margin = new Padding(2, 2, 2, 2);
+            tbwebsite.Margin = new Padding(2);
             tbwebsite.Name = "tbwebsite";
             tbwebsite.Size = new Size(277, 23);
             tbwebsite.TabIndex = 86;
@@ -131,7 +131,7 @@
             // tbnohp
             // 
             tbnohp.Location = new Point(594, 289);
-            tbnohp.Margin = new Padding(2, 2, 2, 2);
+            tbnohp.Margin = new Padding(2);
             tbnohp.Name = "tbnohp";
             tbnohp.Size = new Size(277, 23);
             tbnohp.TabIndex = 82;
@@ -150,7 +150,7 @@
             // tbalamat
             // 
             tbalamat.Location = new Point(253, 337);
-            tbalamat.Margin = new Padding(2, 2, 2, 2);
+            tbalamat.Margin = new Padding(2);
             tbalamat.Name = "tbalamat";
             tbalamat.Size = new Size(277, 23);
             tbalamat.TabIndex = 80;
@@ -158,7 +158,7 @@
             // tbnama
             // 
             tbnama.Location = new Point(253, 287);
-            tbnama.Margin = new Padding(2, 2, 2, 2);
+            tbnama.Margin = new Padding(2);
             tbnama.Name = "tbnama";
             tbnama.Size = new Size(277, 23);
             tbnama.TabIndex = 79;
@@ -179,7 +179,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Hapus });
             dataGridView1.Location = new Point(253, 41);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(650, 179);
@@ -274,7 +274,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Group_237472;
-            pictureBox1.Location = new Point(21, 10);
+            pictureBox1.Location = new Point(13, -6);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(209, 166);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -283,13 +283,13 @@
             // 
             // namaadminfaskes
             // 
-            namaadminfaskes.AutoSize = true;
             namaadminfaskes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            namaadminfaskes.Location = new Point(74, 139);
+            namaadminfaskes.Location = new Point(26, 119);
             namaadminfaskes.Name = "namaadminfaskes";
-            namaadminfaskes.Size = new Size(106, 21);
+            namaadminfaskes.Size = new Size(185, 51);
             namaadminfaskes.TabIndex = 91;
-            namaadminfaskes.Text = "nama admin";
+            namaadminfaskes.Text = "-------nama admin-------";
+            namaadminfaskes.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -306,7 +306,7 @@
             // tbjamoper
             // 
             tbjamoper.Location = new Point(594, 394);
-            tbjamoper.Margin = new Padding(2, 2, 2, 2);
+            tbjamoper.Margin = new Padding(2);
             tbjamoper.Name = "tbjamoper";
             tbjamoper.Size = new Size(277, 23);
             tbjamoper.TabIndex = 92;
@@ -340,7 +340,7 @@
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "AdmFaskes";
             Text = "AdmFaskes";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

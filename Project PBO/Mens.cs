@@ -49,5 +49,15 @@ namespace Project_PBO
             this.Hide();
             mens.FormClosed += (s, args) => this.Close();
         }
+
+        private void Mens_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -139,7 +139,7 @@
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(252, 211);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(650, 288);
@@ -148,13 +148,13 @@
             // 
             // namaadmin
             // 
-            namaadmin.AutoSize = true;
             namaadmin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            namaadmin.Location = new Point(64, 136);
+            namaadmin.Location = new Point(22, 122);
             namaadmin.Name = "namaadmin";
-            namaadmin.Size = new Size(106, 21);
+            namaadmin.Size = new Size(188, 54);
             namaadmin.TabIndex = 11;
-            namaadmin.Text = "nama admin";
+            namaadmin.Text = "-------nama admin-------";
+            namaadmin.TextAlign = ContentAlignment.MiddleCenter;
             namaadmin.Click += namaadmin_Click;
             // 
             // pictureBox2
@@ -171,7 +171,7 @@
             // 
             labelnama.AutoSize = true;
             labelnama.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelnama.Location = new Point(433, 23);
+            labelnama.Location = new Point(433, 21);
             labelnama.Name = "labelnama";
             labelnama.Size = new Size(106, 21);
             labelnama.TabIndex = 13;

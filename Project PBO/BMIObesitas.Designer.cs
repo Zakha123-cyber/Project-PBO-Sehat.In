@@ -185,7 +185,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.White;
             label7.Font = new Font("Impact", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(397, 269);
+            label7.Location = new Point(397, 274);
             label7.Name = "label7";
             label7.Size = new Size(47, 20);
             label7.TabIndex = 97;
@@ -196,7 +196,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.White;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(397, 185);
+            label8.Location = new Point(397, 179);
             label8.Name = "label8";
             label8.Size = new Size(143, 21);
             label8.TabIndex = 80;
@@ -208,7 +208,7 @@
             label10.BackColor = Color.White;
             label10.Font = new Font("Impact", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.DeepPink;
-            label10.Location = new Point(390, 215);
+            label10.Location = new Point(390, 222);
             label10.Name = "label10";
             label10.Size = new Size(150, 43);
             label10.TabIndex = 85;
@@ -219,7 +219,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.White;
             label11.Font = new Font("Segoe UI", 6.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(370, 300);
+            label11.Location = new Point(376, 315);
             label11.Name = "label11";
             label11.Size = new Size(195, 24);
             label11.TabIndex = 81;
@@ -236,7 +236,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.Rectangle_1180__3_;
+            pictureBox4.Image = Properties.Resources.Rectangle_1180__5_;
             pictureBox4.Location = new Point(334, 142);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(272, 228);
