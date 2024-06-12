@@ -163,6 +163,9 @@ namespace Project_PBO
 
         private void button7_Click(object sender, EventArgs e)
         {
+            string judul = textBox1.Text;
+            string sumber = textBox2.Text;
+            int penyakit = Convert.ToInt16(listpenyakit.SelectedValue);
             // Validate input fields
             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
             {
@@ -172,8 +175,8 @@ namespace Project_PBO
 
             try
             {
-                // insert database
-                Artikelcontext.insert(textBox1.Text, textBox2.Text, listpenyakit.SelectedValue.ToString());
+                Artikelcontext artikelcontext = new Artikelcontext();
+                artikelcontext.insert(judul, sumber, penyakit);
                 MessageBox.Show("Data berhasil ditambahkan");
 
                 // Refresh the DataGridView after inserting data

@@ -32,11 +32,17 @@ namespace Project_PBO.App.Context
 
 
         //insert sumber
-        public static void insert(string judul, string sumber, string penyakit)
+        public void insert(string judul, string sumber, int penyakit)
         {
             //insert artikel dan penyakitnya
-            string query = $"INSERT INTO {artikelTable} (judul, sumber) VALUES (@judul, @sumber, @penyakit)";
-            queryExecutor(query);
+            string query = $"INSERT INTO {artikelTable} (judul, sumber, id_penyakit) VALUES (@judul, @sumber, @id_penyakit)";
+            NpgsqlParameter[] parameter =
+            {
+                new NpgsqlParameter("@judul", NpgsqlDbType.Varchar){Value = judul},
+                new NpgsqlParameter("@sumber", NpgsqlDbType.Varchar){Value = sumber},
+                new NpgsqlParameter("@id_penyakit", NpgsqlDbType.Integer){Value = penyakit}
+            };
+            commandExecutor(query, parameter);
         }
 
 
