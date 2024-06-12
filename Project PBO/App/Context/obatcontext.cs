@@ -34,7 +34,7 @@ namespace Project_PBO.App.Context
         }
 
         //insert data
-        public void insert(string nama_obat, string fungsi, string dosis, int penyakit, string jenis)
+        public void insert(string nama_obat, string fungsi, string dosis, int penyakit, int jenis)
         {
             string query = $"INSERT INTO {obatTable} (nama_obat, fungsi, dosis, id_penyakit, id_jenis) VALUES (@nama_obat, @fungsi, @dosis, @penyakit, @jenis)";
             NpgsqlParameter[] parameters =
@@ -43,12 +43,16 @@ namespace Project_PBO.App.Context
                 new NpgsqlParameter("@fungsi", NpgsqlTypes.NpgsqlDbType.Varchar){Value = fungsi},
                 new NpgsqlParameter("@dosis", NpgsqlTypes.NpgsqlDbType.Varchar){Value = dosis},
                 new NpgsqlParameter("@penyakit", NpgsqlTypes.NpgsqlDbType.Integer){Value = penyakit},
-                new NpgsqlParameter("@jenis", NpgsqlTypes.NpgsqlDbType.Varchar){Value = jenis},
+                new NpgsqlParameter("@jenis", NpgsqlTypes.NpgsqlDbType.Integer){Value = jenis},
             };
             commandExecutor(query, parameters);
         }
 
-
+        public static DataTable getJenis()
+        {
+            string query = $"SELECT * FROM jenis_obat";
+            return queryExecutor(query);
+        }
     }
 
 }

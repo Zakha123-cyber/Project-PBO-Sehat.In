@@ -20,9 +20,14 @@ namespace Project_PBO
             DataTable penyakit = PenyakitContext.getAllPenyakit();
             listpenyakit.DataSource = penyakit;
             listpenyakit.DisplayMember = "nama_penyakit";
-            listpenyakit.ValueMember = "nama_penyakit";
+            listpenyakit.ValueMember = "id_penyakit";
             this.Load += new EventHandler(AdmObat_Load);
             email = Login.UserEmail;
+
+            DataTable jenisobat = obatcontext.getJenis();
+            cbjenisobat.DataSource = jenisobat;
+            cbjenisobat.DisplayMember = "jenis";
+            cbjenisobat.ValueMember = "id_jenis";
         }
         private void AdmObat_Load(object sender, EventArgs e)
 
@@ -164,7 +169,7 @@ namespace Project_PBO
                 string fungsi = textBox5.Text;
                 string dosis = textBox3.Text;
                 int penyakit = Convert.ToInt32(listpenyakit.SelectedValue);
-                string jenis = textBox4.Text;
+                int jenis = Convert.ToInt32(cbjenisobat.SelectedValue);
 
                 obatcontext obatcontext = new obatcontext();
                 obatcontext.insert(nama_obat, fungsi, dosis, penyakit, jenis);
