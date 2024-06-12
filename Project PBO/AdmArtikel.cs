@@ -128,7 +128,7 @@ namespace Project_PBO
             {
                 try
                 {
-                    string idArtikel = dataGridView1.Rows[e.RowIndex].Cells["id_artikel"].Value.ToString();
+                    int idArtikel = Int32.Parse(dataGridView1.Rows[e.RowIndex].Cells["id_artikel"].Value.ToString());
 
                     DialogResult dialogResult = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Hapus Data", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)

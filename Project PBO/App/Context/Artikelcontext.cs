@@ -54,12 +54,12 @@ namespace Project_PBO.App.Context
 
         //delete artikel
 
-        public static void delete(string id)
+        public static void delete(int id)
         {
             string query = $"DELETE FROM {artikelTable} WHERE id_artikel = @id";
             NpgsqlParameter[] parameters =
             {
-                new NpgsqlParameter("@id", NpgsqlDbType.Varchar){Value = id},
+                new NpgsqlParameter("@id", NpgsqlDbType.Integer){Value = id},
             };
             commandExecutor(query, parameters);
         }
