@@ -24,7 +24,7 @@ namespace Project_PBO
         private void Admin_Load(object sender, EventArgs e)
         {
             LoadData();
-            SetButtonColors(button1);
+            SetButtonColors(button5);
         }
 
         private void LoadData()
@@ -115,6 +115,11 @@ namespace Project_PBO
         }
 
         private void namaadminkritik_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
