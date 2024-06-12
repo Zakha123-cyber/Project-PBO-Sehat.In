@@ -145,7 +145,7 @@ namespace Project_PBO
         private void listpenyakit_SelectedIndexChanged(object sender, EventArgs e)
         {
             //menambahkan data id penyakit
-            listpenyakit.DisplayMember = "id_penyakit";
+            listpenyakit.DisplayMember = "nama_penyakit";
 
 
         }
