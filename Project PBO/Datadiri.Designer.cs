@@ -50,11 +50,13 @@
             panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // pictureBox3
@@ -159,8 +161,9 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Silver;
             pictureBox2.Image = Properties.Resources.Group_237475;
-            pictureBox2.Location = new Point(234, 78);
+            pictureBox2.Location = new Point(283, 96);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(117, 74);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -170,9 +173,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Silver;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.DeepPink;
-            label1.Location = new Point(171, 165);
+            label1.Location = new Point(220, 183);
             label1.Name = "label1";
             label1.Size = new Size(44, 17);
             label1.TabIndex = 33;
@@ -181,9 +185,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Silver;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.DeepPink;
-            label2.Location = new Point(171, 234);
+            label2.Location = new Point(220, 252);
             label2.Name = "label2";
             label2.Size = new Size(51, 17);
             label2.TabIndex = 35;
@@ -192,9 +197,10 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Silver;
             label3.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DeepPink;
-            label3.Location = new Point(171, 304);
+            label3.Location = new Point(220, 322);
             label3.Name = "label3";
             label3.Size = new Size(51, 17);
             label3.TabIndex = 36;
@@ -205,7 +211,7 @@
             button6.BackColor = Color.DodgerBlue;
             button6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(243, 419);
+            button6.Location = new Point(300, 437);
             button6.Name = "button6";
             button6.Size = new Size(86, 26);
             button6.TabIndex = 40;
@@ -229,7 +235,7 @@
             labelNama.BackColor = Color.White;
             labelNama.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelNama.ForeColor = SystemColors.ActiveCaptionText;
-            labelNama.Location = new Point(177, 196);
+            labelNama.Location = new Point(226, 214);
             labelNama.Name = "labelNama";
             labelNama.Size = new Size(54, 21);
             labelNama.TabIndex = 42;
@@ -240,7 +246,7 @@
             labelNoHp.AutoSize = true;
             labelNoHp.BackColor = Color.White;
             labelNoHp.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelNoHp.Location = new Point(177, 263);
+            labelNoHp.Location = new Point(226, 281);
             labelNoHp.Name = "labelNoHp";
             labelNoHp.Size = new Size(45, 21);
             labelNoHp.TabIndex = 43;
@@ -251,7 +257,7 @@
             labelalamat.AutoSize = true;
             labelalamat.BackColor = Color.White;
             labelalamat.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelalamat.Location = new Point(177, 335);
+            labelalamat.Location = new Point(226, 353);
             labelalamat.Name = "labelalamat";
             labelalamat.Size = new Size(54, 21);
             labelalamat.TabIndex = 44;
@@ -260,7 +266,7 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
-            panel3.Location = new Point(177, 196);
+            panel3.Location = new Point(226, 214);
             panel3.Name = "panel3";
             panel3.Size = new Size(235, 21);
             panel3.TabIndex = 45;
@@ -268,7 +274,7 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
-            panel4.Location = new Point(177, 263);
+            panel4.Location = new Point(226, 281);
             panel4.Name = "panel4";
             panel4.Size = new Size(235, 21);
             panel4.TabIndex = 46;
@@ -276,10 +282,20 @@
             // panel5
             // 
             panel5.BackColor = Color.White;
-            panel5.Location = new Point(177, 335);
+            panel5.Location = new Point(226, 353);
             panel5.Name = "panel5";
             panel5.Size = new Size(235, 62);
             panel5.TabIndex = 47;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.Rectangle_1180__2_;
+            pictureBox5.Location = new Point(182, 81);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(314, 399);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 48;
+            pictureBox5.TabStop = false;
             // 
             // Datadiri
             // 
@@ -301,11 +317,12 @@
             Controls.Add(pictureBox3);
             Controls.Add(button2);
             Controls.Add(panel1);
-            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(panel3);
             Controls.Add(panel4);
             Controls.Add(panel5);
+            Controls.Add(pictureBox5);
+            Controls.Add(pictureBox1);
             Name = "Datadiri";
             Text = "Datadiri";
             Load += Datadiri_Load;
@@ -314,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -344,5 +362,6 @@
         private Panel panel3;
         private Panel panel4;
         private Panel panel5;
+        private PictureBox pictureBox5;
     }
 }

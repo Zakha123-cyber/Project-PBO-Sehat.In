@@ -58,7 +58,6 @@ namespace Project_PBO
             {
                 MessageBox.Show($"Error loading data: {ex.Message}");
             }
-
             //menampilkan nama admin
             DataTable dt = datadiricontext.getdatadirinama(email);
             if (dt != null && dt.Rows.Count > 0)
@@ -71,9 +70,7 @@ namespace Project_PBO
             else
             {
                 Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
-            }   
-
-
+            }
         }
 
         private void SetButtonColors(Button activeButton)

@@ -174,7 +174,7 @@ namespace Project_PBO
             catch (Exception ex)
             {
                 MessageBox.Show($"Error adding data: {ex.Message}");
-            }   
+            }
 
         }
 
@@ -191,6 +191,11 @@ namespace Project_PBO
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             //kategori fungsi
+        }
+
+        private void namaadminubat_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

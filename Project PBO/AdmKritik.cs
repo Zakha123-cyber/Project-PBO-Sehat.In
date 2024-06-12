@@ -113,5 +113,10 @@ namespace Project_PBO
             form2.Show();
             this.Hide();
         }
+
+        private void namaadminkritik_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
