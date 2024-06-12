@@ -55,6 +55,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { HapusArtikel });
             dataGridView1.Location = new Point(288, 55);
@@ -72,7 +73,6 @@
             HapusArtikel.Name = "HapusArtikel";
             HapusArtikel.Text = "Hapus";
             HapusArtikel.UseColumnTextForButtonValue = true;
-            HapusArtikel.Width = 125;
             // 
             // label2
             // 

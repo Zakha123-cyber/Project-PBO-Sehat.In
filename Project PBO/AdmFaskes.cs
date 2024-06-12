@@ -161,7 +161,7 @@ namespace Project_PBO
             string nama = tbnama.Text;
             string alamat = tbalamat.Text;
             string kota = tbkota.Text;
-            int nohp = Int32.Parse(tbnohp.Text);
+            int nohp = int.Parse(tbnohp.Text);
             string website = tbwebsite.Text;
             string jamoper = tbjamoper.Text;
 
