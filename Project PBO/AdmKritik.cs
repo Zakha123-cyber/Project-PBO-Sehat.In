@@ -29,6 +29,17 @@ namespace Project_PBO
 
         private void LoadData()
         {
+            DataTable dt = datadiricontext.getdatadirinama(email);
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                string nama = dt.Rows[0]["nama"].ToString();
+                namaadminkritik.Text = nama;
+                Console.WriteLine("Nama data loaded successfully.");
+            }
+            else
+            {
+                Console.WriteLine(dt == null ? "DataTable dt is null." : "No data found for datadirinama.");
+            }
             try
             {
                 // Menampilkan data dari database ke DataGridView
